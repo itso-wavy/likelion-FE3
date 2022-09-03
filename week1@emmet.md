@@ -21,7 +21,7 @@
 </div>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 div+div>p>span+em^bq
 </span>
@@ -35,7 +35,7 @@ div+div>p>span+em^bq
 <blockquote></blockquote>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 div+div>p>span+em^^bq
 </span>
@@ -55,7 +55,7 @@ div+div>p>span+em^^bq
 </div>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 div>(header>ul>li*2>a)+footer>p
 </span>
@@ -77,7 +77,7 @@ div>(header>ul>li*2>a)+footer>p
 </footer>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 (div>dl>(dt+dd)*3)+footer>p
 </span>
@@ -93,7 +93,7 @@ div>(header>ul>li*2>a)+footer>p
 </ul>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 ul>li.item$*5
 </span>
@@ -105,7 +105,7 @@ ul>li.item$*5
 <h3 title="item3">Header 3</h3>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span style='color: red;'>
 h$[title=item$]{Header $}*3
 </span>
@@ -121,7 +121,7 @@ h$[title=item$]{Header $}*3
 </ul>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 ul>li.item$$$*5
 </span>
@@ -137,7 +137,7 @@ ul>li.item$$$*5
 </ul>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span style='color: red;'>
 ul>li.item$@-*5
 </span>
@@ -153,7 +153,7 @@ ul>li.item$@-*5
 </ul>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span style='color: red;'>
 ul>li.item$@3*5
 </span>
@@ -163,7 +163,7 @@ ul>li.item$@3*5
 <form id="search" class="wide"></form>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 form#search.wide
 </span>
@@ -173,7 +173,7 @@ form#search.wide
 <p class="class1 class2 class3"></p>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 p.class1.class2.class3
 </span>
@@ -183,7 +183,7 @@ p.class1.class2.class3
 <p title="Hello world"></p>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 p[title="Hello world"]
 </span>
@@ -193,7 +193,7 @@ p[title="Hello world"]
 <td rowspan="2" colspan="3" title=""></td>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 td[rowspan=2 colspan=3 title]
 </span>
@@ -203,7 +203,7 @@ td[rowspan=2 colspan=3 title]
 <div a="value1" b="value2"></div>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 [a='value1' b="value2"]
 </span>
@@ -213,7 +213,7 @@ td[rowspan=2 colspan=3 title]
 <a href="">Click me</a>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 a{Click me}
 </span>
@@ -223,7 +223,7 @@ a{Click me}
 <p>Click <a href="">here</a> to continue</p>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 p>{Click }+a{here}+{ to continue}
 </span>
@@ -233,7 +233,7 @@ p>{Click }+a{here}+{ to continue}
 <em><span class="class"></span></em>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 em>.class
 </span>
@@ -245,7 +245,7 @@ em>.class
 </ul>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 ul>.class
 </span>
@@ -259,7 +259,7 @@ ul>.class
 </table>
 ```
 <details>
-<summary style="display: inline">▶</summary>
+<summary></summary>
 <span>
 table>.row>.col
 </span>
