@@ -4,11 +4,13 @@
   
 * 테킷 강의 <일단 만드는 HTML/CSS> 수강 
 
+
+---
 # 8/30(화)
 
 ## 1. 마크다운 문법
 
-[하위 문서](https://github.com/itso-wavy/babyLion/blob/72fca02161507300580074ecada37ab80027fa89/HTML/day2-2(markdown_grammar).md) 참고
+[개별 문서](https://github.com/itso-wavy/babyLion/blob/main/week1%40markdown_grammar.md) 참고
 
 ## 2. VSCode 설정과 단축키
 
@@ -66,22 +68,13 @@
 * `Ctrl + Shift + Alt`: 다중커서복사
 
 ## 3. emmet
-* Child: >
-* Sibling: +
-* Climb-up: ^
-* Grouping: ()
-* Multiplication: *
-* Item numbering: $
-* ID and CLASS attributes
-* Custom attributes
-* Text: {}
-* Implicit tag names
 
+[개별 문서](https://github.com/itso-wavy/babyLion/blob/main/week1%40emmet.md) 참고
 
 ## 4. 첫 GitHub
 
 * GUI로 첫 커밋. 새 폴더, 파일 생성/편집/삭제
   
-* dot 눌러서 웹 편집기 실행, 편집기 내 commit
+* .(dot) 눌러서 웹 편집기 실행, commit
   
-* pages 생성/ 주소는 항상 index.html로 열림
+* pages 생성. 주소는 항상 index.html로 열림
