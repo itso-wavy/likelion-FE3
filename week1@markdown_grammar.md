@@ -1,5 +1,5 @@
 # 마크다운 문법
-* 디스코드, 노션, 깃헙 readme 등에 활용
+디스코드, 노션, 깃헙 readme 등에 활용
 
 ## 1. 헤딩
 
@@ -18,9 +18,9 @@
     ###### 헤딩6
     
 ## 2. hr
-___
----
-***
+  ___
+  ---
+  ***
     ___
     ---
     ***
@@ -45,7 +45,7 @@ ___
 
 **이탤릭* 또는 __이탤릭_
 
-____밑줄__
+`<u>` <u>밑줄</u>
 
 ~~ ~~취소~~
 
@@ -83,7 +83,6 @@ EMAIL: you.meet.vvavy@gmail.com
 ![](https://d23.com/app/uploads/2013/04/1180w-600h_minnie-mouse_1.jpg "미니마우스")
 [![](https://i.pinimg.com/736x/b1/d3/a0/b1d3a0a79444f12b68c8f2bebd18415a.jpg)](https://github.com/itso-wavy) 
 ```
-
 
 ## 7. 테이블
 

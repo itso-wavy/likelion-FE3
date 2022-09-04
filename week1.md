@@ -1,3 +1,15 @@
+**INDEX**
+- [8/29(월)](#829월)
+- [8/30(화)](#830화)
+  - [1. 마크다운 문법](#1-마크다운-문법)
+  - [2. VSCode 설정과 단축키](#2-vscode-설정과-단축키)
+    - [(1) 초기 설정](#1-초기-설정)
+    - [(2) 단축키](#2-단축키)
+  - [3. emmet](#3-emmet)
+  - [4. 첫 GitHub](#4-첫-github)
+
+
+
 # 8/29(월)
 
 * BIGPLAN 글로 표현하고 조별 발표(8조)
@@ -10,7 +22,7 @@
 
 ## 1. 마크다운 문법
 
-[개별 문서](https://github.com/itso-wavy/babyLion/blob/main/week1%40markdown_grammar.md) 참고
+[개별 문서](https://github.com/itso-wavy/babyLion/blob/main/week1@markdown_grammar.md) 참고
 
 ## 2. VSCode 설정과 단축키
 
@@ -69,7 +81,7 @@
 
 ## 3. emmet
 
-[개별 문서](https://github.com/itso-wavy/babyLion/blob/main/week1%40emmet.md) 참고
+[개별 문서](https://github.com/itso-wavy/babyLion/blob/main/week1@emmet.md) 참고
 
 ## 4. 첫 GitHub
 
