@@ -1,0 +1,46 @@
+/* Reset */
+body, h1, p {
+    margin: 0px;
+}
+
+/* Components */
+body {
+    background-attachment: fixed;
+    background-image: url(images/bg.png);
+    background-position: center;
+    background-size: cover;
+}
+
+img {
+    vertical-align: top;
+}
+
+.wrapper {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.animal {
+    padding-top: 50px;
+}
+
+.box {
+    background-color: #93572e;
+    height: 300px;
+    color: white;
+    border-bottom: 10px solid #4a260b;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.text-box {
+    padding: 0 20px;
+}
+
+.box h1 {
+    padding: 7px 0;
+}
+
+.box p {
+    font-size: 15px;
+}
