@@ -253,16 +253,16 @@ __헤딩__, 페이지 계층 구조의 기준, 익명 영역(anonymous section)�
 
 ---
 # 9/1(목)
+
+`이호준 강사님`
+
 * [git cheat sheet education](https://education.github.com/git-cheat-sheet-education.pdf)
 
 * [.gitignore 파일 생성 툴](https://www.toptal.com/developers/gitignore)
 
-* ~~A레코드 (도메인+IP)~~
-
+* ~~A레코드(도메인+IP)~~
 
 ## 1. GitHub 초급
-
-
 ### (1) CLI 명령어
 
   1-1. git **clone** `github url` 
@@ -277,7 +277,6 @@ __헤딩__, 페이지 계층 구조의 기준, 익명 영역(anonymous section)�
 
 
 ### (2) Linux 명령어
-
 * mkdir `folderName`: 새폴더
  
 * cd `folderName`: 이동(change directory)
@@ -300,7 +299,6 @@ __헤딩__, 페이지 계층 구조의 기준, 익명 영역(anonymous section)�
 * 터미널에서도 콘솔처럼 위아래 방향키로 예전 메시지 불러오기 가능
 
 ### (3) Git 사용자 이름&이메일 등록
-
 * git **init**: `.git` 숨김 폴더 생성, 현재 디렉토리를 Git 저장소로 지정
   
   (한 폴더 안에 `.git` 폴더가 여러개 있을 경우 충돌 발생함)
