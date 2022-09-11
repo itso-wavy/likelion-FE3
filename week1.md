@@ -20,7 +20,21 @@
     - [(4) Git 상태 확인](#4-git-상태-확인)
     - [(5) Git repository 만들기](#5-git-repository-만들기)
 - [9/2(금)](#92금)
-- [WEEK1 자습서](#week1-자습서)
+  - [1. HTML+CSS 작업순서](#1-htmlcss-작업순서)
+    - [(0) 용어 정리의 중요성](#0-용어-정리의-중요성)
+      - [1) 검색을 위해 영어 원문으로 숙지](#1-검색을-위해-영어-원문으로-숙지)
+    - [(1) <span style="color: palevioletred">레이아웃 파악</span>](#1-레이아웃-파악)
+    - [(2) <span style="color: palevioletred">초기화</span>(Reset)](#2-초기화reset)
+      - [1) Initial value(초기값)](#1-initial-value초기값)
+      - [2) Inherit value(상속값)](#2-inherit-value상속값)
+    - [(3) <span style="color: palevioletred">정렬</span>](#3-정렬)
+      - [1) **auto**:](#1-auto)
+      - [2) 가운데 정렬](#2-가운데-정렬)
+    - [(4) <span style="color: palevioletred">디테일</span>](#4-디테일)
+      - [1) header ➩ footer ➩ contents](#1-header--footer--contents)
+      - [2) 선택자](#2-선택자)
+      - [3) display](#3-display)
+    - [(5) <span style="color: palevioletred">코드정리</span>](#5-코드정리)
 
 
 
@@ -349,7 +363,107 @@ git push -u origin main
 # 9/2(금)
 
 `이종찬 강사님` <!-- "하지마안~", "망합니다." -->
+* 강의 교안: https://camp.veamcamp.com/allday/page/list.php
+* 오늘의 목표: https://camp.veamcamp.com/veamcss/profile
+* [내 결과물](https://github.com/itso-wavy/babyLion/blob/ec15bf0878e31d945e696539de77b53b3eb6dc30/week1@day5_CSS.zip)
 
+## 1. HTML+CSS 작업순서
+### (0) 용어 정리의 중요성
+#### 1) 검색을 위해 영어 원문으로 숙지
+  > [MDN 영문사이트](https://developer.mozilla.org/en-US/)
 
----
-# WEEK1 자습서
+  * **HTML**: ```<Tag(태그)```<span style="color: palevioletred">```(속성)attr="Attribute Value(속성값)```</span>```">``` ➩ ```Elements(요소)```, 부모/자손/형제 관계...
+      
+  * **CSS** 선택자의 종류: <br>
+      * Universal selector(*, 전체선택자): 모든 선택자의 앞에 항상 존재하며 생략될 수 있다.
+      * **Type selectors**(유형선택자)
+      * Class / ID selectors
+      * Attribute selectors(속성선택자)
+
+  ```css
+  Type Selector(유형 선택자) {
+      Property(속성): Value(값);
+  } 
+  ```
+
+### (1) <span style="color: palevioletred">레이아웃 파악</span>
+* 큰 덩어리부터 파악하고 순서대로 작업한다.
+* 요소가 어떻게 공간을 차지하고 있는지 background-color 프로퍼티로 확인한다.
+  
+### (2) <span style="color: palevioletred">초기화</span>(Reset)
+* 스타일을 주기 전에 현재 브라우저에서 보이는 상태를 확인하고 초기화한다.
+* [크롬 기본 제공 스타일](https://chromium.googlesource.com/chromium/src/third_party/+/master/blink/renderer/core/html/resources/html.css) (콘솔 내 사용자 에이젼트 스타일시트로 확인됨)
+* 지정값 - 상속값(inherit) - 초기값(initial) 순으로 적용된다.
+  
+#### 1) Initial value(초기값)
+* initial: 상속 불가 프로퍼티를 초기화
+
+* 지정값, 상속값이 없을 때 자동으로 적용되는 값. 모든 **프로퍼티**에는 이니셜 밸류가 존재한다.
+
+  ```css
+    { /* Initial value */
+
+    width: auto; /*  부모요소 기준 */
+    height: auto; /*  자식요소 기준 */
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+    background-color: transparent;
+    }
+  ```
+* 브라우저가 **요소**에 제공하는 스타일과 구분할 것(ex. body의 마진값, div의 블록 레벨)
+
+#### 2) Inherit value(상속값) 
+* inherit: 상속 가능 프로퍼티를 초기화
+  
+* 상속 가능한 프로퍼티는 color, font-size, text...같은 텍스트 관련 속성으로 정해져 있다. 
+
+* border-color에 지정값이 없으면 currentColor 상속값이 적용된다.
+
+### (3) <span style="color: palevioletred">정렬</span>
+#### 1) **auto**: 
+* (보통 부모 요소로부터 주어진) **가용 너비 중** 브라우저가 계산한 **최대 너비**
+
+* 100%는 계산값, 스크롤이 생길 수 있다. 그에 반해 auto는 마진, 패딩, 보더를 유연하게 적용한다.
+
+* width, height, margin의 auto는 엄밀한 의미가 다르며 padding은 auto가 없다.
+
+#### 2) 가운데 정렬
+```css
+{/* 블럭레벨 엘리먼츠 */
+margin: 0 auto;   /* 1 */ 
+margin: auto;     /* 2 */ 
+
+/* 인라인 엘리먼츠: 상위 요소에 적용한다 */
+text-align: center;
+}
+```
+* 블록 레벨 요소의 특성상, auto로 세로 가운데 정렬은 불가하다. height: auto는 공기와 같다.
+
+### (4) <span style="color: palevioletred">디테일</span>
+
+#### 1) header ➩ footer ➩ contents
+* 크기(높이X너비), 길이, 마진, 패딩
+* 텍스트, 폰트, 컬러, 배경, 테두리 등
+  * height 지정값을 주면 컨텐츠 양이 변화할 때 대응이 불가하다. 그래서 초기값 auto로 두고 패딩으로 대략적인 사이즈를 맞추는 것.
+  * `width: fit-content`: 컨텐츠 양에 따라 자동으로 너비가 늘어난다, IE 지원 X<br>
+   (cf. `max-content`, `min-content`)
+  * background-image는 도배되는 특성이 있다.
+  * 개행은 인간의 편의를 위한 것.
+#### 2) 선택자
+* 섬세한 선택이 중요하다.
+* id는 확장성이 떨어지므로 class 선택자를 주로 이용한다.
+* combinator(결합자): ` `, `>`, `+`
+#### 3) display
+* block: 컨테이너 박스(h1)
+* inline: 박스 안 컨텐츠(h1 내 텍스트)
+  * 베이스라인 기준으로 가로배치. 높이와 너비가 아닌 길이의 개념. 
+  * 상하좌우 padding을 가지나 공간 차지를 하지 않는다.
+  * 좌우 margin을 가진다.
+* inline-block
+
+### (5) <span style="color: palevioletred">코드정리</span>
+* CSS (Cascading Style Sheets)
+* 셀렉터 우선순위(Selector Specificity, 명시도)
+* 유지보수가 중요하다.
