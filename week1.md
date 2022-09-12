@@ -8,7 +8,7 @@
   - [3. Emmet](#3-emmet)
   - [4. 첫 GitHub](#4-첫-github)
 - [8/31(수)](#831수)
-  - [1. HTML](#1-html)
+  - [1. HTML(1)](#1-html1)
     - [(1) Document element & metadata](#1-document-element--metadata)
     - [(2) Sections(섹셔닝 요소)](#2-sections섹셔닝-요소)
     - [(3) Grouping content](#3-grouping-content)
@@ -48,7 +48,6 @@
 
 ---
 # 8/30(화) 
-
 `이호준 강사님`
 
 * 강사님과의 첫인사
@@ -156,7 +155,6 @@
 
 ---
 # 8/31(수)
-
 `한재현 강사님`
 
 * 아이스 브레이킹: 강사님 학생시절 일화, 스터디에서 남들에게 가르치다보니 여러번의 부캠 수강 후에도 개념 오류가 있었단 걸 깨닳으심
@@ -165,7 +163,7 @@
   * 누구나 쉽게 배우는 자바스크립트
 
 
-## 1. HTML
+## 1. HTML(1)
 
 HTML: 웹문서 마크업 언어, 웹표준은 HTML Living Standard
 
@@ -253,7 +251,6 @@ __헤딩__, 페이지 계층 구조의 기준, 익명 영역(anonymous section)�
 
 ---
 # 9/1(목)
-
 `이호준 강사님`
 
 * [git cheat sheet education](https://education.github.com/git-cheat-sheet-education.pdf)
@@ -359,7 +356,6 @@ git push -u origin main
 
 ---
 # 9/2(금)
-
 `이종찬 강사님` <!-- "하지마안~", "망합니다." -->
 * 강의 교안: https://camp.veamcamp.com/allday/page/list.php
 * 오늘의 목표: https://camp.veamcamp.com/veamcss/profile
