@@ -28,13 +28,13 @@
       - [1) Initial value(초기값)](#1-initial-value초기값)
       - [2) Inherit value(상속값)](#2-inherit-value상속값)
     - [(3) <span style="color: palevioletred">정렬</span>](#3-정렬)
-      - [1) **auto**:](#1-auto)
+      - [1) **auto**](#1-auto)
       - [2) 가운데 정렬](#2-가운데-정렬)
     - [(4) <span style="color: palevioletred">디테일</span>](#4-디테일)
       - [1) header ➩ footer ➩ contents](#1-header--footer--contents)
       - [2) 선택자](#2-선택자)
       - [3) display](#3-display)
-    - [(5) <span style="color: palevioletred">코드정리</span>](#5-코드정리)
+    - [(5) <span style="color: palevioletred">수정</span>](#5-수정)
 
 
 
@@ -420,7 +420,7 @@ git push -u origin main
 * border-color에 지정값이 없으면 currentColor 상속값이 적용된다.
 
 ### (3) <span style="color: palevioletred">정렬</span>
-#### 1) **auto**: 
+#### 1) **auto**
 * (보통 부모 요소로부터 주어진) **가용 너비 중** 브라우저가 계산한 **최대 너비**
 
 * 100%는 계산값, 스크롤이 생길 수 있다. 그에 반해 auto는 마진, 패딩, 보더를 유연하게 적용한다.
@@ -461,7 +461,7 @@ text-align: center;
   * 좌우 margin을 가진다.
 * inline-block
 
-### (5) <span style="color: palevioletred">코드정리</span>
+### (5) <span style="color: palevioletred">수정</span>
 * CSS (Cascading Style Sheets)
 * 셀렉터 우선순위(Selector Specificity, 명시도)
-* 유지보수가 중요하다.
+* 확장성과 유지보수를 고려하라.
