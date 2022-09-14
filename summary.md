@@ -1,3 +1,34 @@
+# PROCESS
+
+0. (기획자) 기획
+
+1. (백엔드) URL 구조
+
+```
+   www.hojun.com/
+   www.hojun.com/a/
+   www.hojun.com/b/
+   www.hojun.com/c/
+```
+
+2. (백엔드, DBA) model 설계
+
+```
+  게시판
+
+  - 게시물 제목
+  - 게시물 내용
+  - 사진
+    ....
+```
+
+3. (디자이너) 디자인(3번이 아니라 기획과 동시 진행될 수도 있습니다.)
+4. (프론트엔드) templates 작성
+5. (프론트엔드, 백엔드) model 설계한 것과 templates 연동
+6. URL 연결
+
+---
+
 # HTML
 
 ## 1. HTML이란?
