@@ -11,6 +11,17 @@
 - [9/7 (수)](#97-수)
   - [1. HTML(5)](#1-html5)
     - [(5) Forms](#5-forms)
+    - [(6) Tabular data](#6-tabular-data)
+  - [2. CSS: Cascading Style Sheets](#2-css-cascading-style-sheets)
+    - [(1) 우선순위](#1-우선순위)
+    - [(2) 벤더프리픽스](#2-벤더프리픽스)
+- [9/8 (목)](#98-목)
+  - [CSS(2)](#css2)
+    - [(3) CSS Selector](#3-css-selector)
+    - [(4) 박스 모델](#4-박스-모델)
+      - [1) 박스의 구성](#1-박스의-구성)
+      - [2) 박스의 유형(display):](#2-박스의-유형display)
+      - [3) 대체 박스 모델](#3-대체-박스-모델)
 
 
 
@@ -58,7 +69,7 @@
 > * CSS white-space: `p { white-space: pre; }`
 
 `<a href="hyper-reference">`: 예외적으로 a에 sections, grouping content 자식 요소를 둘 수 있음. 하지만 a, btn와 같이 사용자와 인터렉션이 가능한 요소는 둘 수 없음, 외부/내부링크/내PC의 폴더/파일 모두 링크 가능, href가 없으면 브라우저는 올바르지 못한 링크라고 판단함(cf. <span style="color: palevioletred">a는 링크, button은 기능</span>)
-- href="#000": 해쉬링크(id), scroll-behavior 프로퍼티로 부드럽게 조작 가능
+- href="#000": 해쉬링크(id), scroll-behavior 프로퍼티로 부드럽게 조작 가능,#만 입력할 시 페이지 최상단으로 이동
 - target="_blank": 새 탭에서 열기
 - download
 - download="a.hwp": 파일명 지정, 확장자 변경 가능
@@ -143,7 +154,9 @@ alt="test">
   * 코덱: 원본영상의 압축물
   * 포맷: 코덱을 담아 플레이어에 전달하는 컨테이너
 > 바이트 단위: 킬로-메가-기가-테라-페타
-  
+
+> 속도조절: document.getElementsByTagName("video")[0].playbackRate = 2.5;
+
 ### (5) Forms
 ![](https://paullabworkspace.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa33523d6-7106-4de0-8510-400291266748%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-10-06_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11.06.41.png?table=block&id=cbcd1dde-2b64-46cc-880b-ff93347155ec&spaceId=579fe283-28aa-489d-ae65-d683304becfc&width=1600&userId=&cache=v2)
 
@@ -153,9 +166,8 @@ alt="test">
 > 웹서버: 정적 파일을 서빙, 로컬/클라우드<br>
 > GET: URL로 데이터를 전달할 때 사용, 공유할 때 좋음. 민감 데이터, 큰 데이터 X<br>
 > POST: 패킷 안에 데이터를 캡슐화해서 전달할 때 사용. 민감 데이터, 큰 데이터 O
-
 ```html
-<form action="a.html" method="">
+<form action="a.html" method="get">
     <input type="text" name="id">
     <input type="password" name="pw">
 </form>
@@ -167,7 +179,16 @@ alt="test">
 ```html
 <input type="text/password/number/button/search/date/time/radio/checkbox/color/range/file/email/url/tel">
 ```
->spinner ui
+```html
+<form action="" method="">
+    <input type="text" name="이름" value="고양이" >
+    <input type="hidden" name="이름"  value="10" >
+    <button type="submit">제출</button>
+</form>
+<!-- form에 제출되는 data 수정은 JS 없이 input으로도 해결 가능,
+    form에 없는 데이터는 input hidden에 JS로 value 추가하기 -->
+```
+> number: spinner ui
 
 `<button>`: submit, button, reset
 
@@ -176,6 +197,7 @@ alt="test">
 `<label>`: for="control id"
 
 `<textarea>`: cols, rows
+> https://ui.toast.com/tui-editor
 
 `<fieldset>`, `<legend>`
 
@@ -191,3 +213,83 @@ alt="test">
     <option value="화성">화성</option>
 </datalist>
 ```
+
+### (6) Tabular data
+
+`<table>`
+
+![](https://paullabworkspace.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcca0db6d-558a-4310-88f3-791691fbc1ce%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-02-25_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_12.59.33.png?table=block&id=f360dc23-1a98-4262-addc-0e13323107d3&spaceId=579fe283-28aa-489d-ae65-d683304becfc&width=1580&userId=&cache=v2)
+
+`<caption>`: table 요소의 첫번째 자식
+
+`<thead>`, `<tbody>`, `<tfoot>`: 테이블의 내용이 많을 때 머리글, 본문, 바닥글로 구역화, thead가 없으면 tbody에 정보가 들어가지 않음
+
+`<tr>`, `<td>`/`<th>`: th 태그는 행, 열의 머리말을 가운데 정렬로 굵게 표시함
+* scope: row/col, 스크린 리더가 읽을 방향 지정
+
+`<colgroup>`, `<col>`: 한 열에 공통적인 스타일을 줌
+> border-collapse: collapse;
+
+ colspan, rowspan: 셀합치기 
+
+ ## 2. CSS: Cascading Style Sheets
+: 우선순위에 따라 적용되는 스타일 언어
+```css
+Selector(선택자) { /* Declaration Block(선언블록) */
+    Property(속성): Value(값);
+}
+```
+
+### (1) 우선순위
+* 내부, 외부 중 작성순서에 따라 적용
+  * 내부 CSS
+  * 외부 CSS: 공통 CSS+커스텀 CSS
+  * 인라인 CSS(비권장)
+
+* 다중 스타일시트(엣룰): @charset, @import, @font-face, @keyframes, @media, @supports
+> link header.css ➩ @import "menu.css"
+### (2) 벤더프리픽스
+> 오토프리픽서 CSS: https://autoprefixer.github.io/
+
+
+---
+# 9/8 (목)
+`* 이호준 강사님`
+## CSS(2)
+
+> 웹디자인대회 4개, 최종프로젝트 **마켓(MPA < 리액트 < SPA바닐라) 언급
+  
+### (3) CSS Selector
+* 전체 선택자, 타입 선택자, 아이디 선택자, 클래스 선택자
+* 선택자 우선순위: 후자 우선의 원칙, 구체성(명시도)의 원칙, 중요성의 원칙
+  * Specificity(구체성): 타입/가상요소(::) < class/가상클래스(:)/속성 < id < inline-style, 전체선택자는 무시됨
+* [셀렉터 심화]()
+
+### (4) 박스 모델
+#### 1) 박스의 구성
+   * 콘텐츠(content): width X height
+   * 패딩, 보더, 마진
+   > 참고 [border-radius](css/week2@border-radius.html)
+   * **마진 병합**(겹침) 현상
+     * 정의: 블록 요소 사이의 상하단 마진이 맞닿으면 하나로 병합되는 현상(두 마진의 크기가 다르면 큰 쪽으로 병합)
+     * 대상: 형제/부모자식/빈 블록 자기자신의 상하단 마진
+     * 블럭요소의 마진이 0이어도 발생함
+     * CSS 제작자의 디자인적 의도가 담긴 것으로 문제가 아님, 그럼에도 불구하고...
+        1. <span style="color: palevioletred; margin-left: 30px;">부모요소에 border/padding: 1px transparent ➩ 눈에 보임</span>
+        2. <span style="color: palevioletred; margin-left: 30px;">display: inline-block ➩ 근본적 해결책이 아님</span>
+        3. <span style="color: palevioletred; margin-left: 30px;">부모요소에 display: flow-root ➩ IE 지원 불가</span>
+        4. <span style="color: palevioletred; margin-left: 30px;">부모요소에 overflow: hidden ➩ 그림자 등이 잘려보일 수 있음</span>
+#### 2) 박스의 유형(display): 
+   * ① 블록
+     * 가용 너비의 가로 100%를 사용, 사용하지 못하는 공간은 마진으로 채움
+     * width, height로 컨트롤
+     * 패딩, 보더, 마진이 다른 요소를 밀어냄
+   * ② 인라인
+     * 컨텐츠 박스만큼의 너비만 가지므로 한 줄에 다음 요소가 올 수 있음
+     * width, height로 컨트롤 불가
+     * 패딩, 보더, 좌우마진을 가짐 / **이들의 상하값은 다른 요소를 밀어내지 않음**
+   * ③ 인라인-블록
+     * 블록처럼 width, height, 패딩, 보더, 마진 지정 가능
+     * 가로를 다 차지하지 않으므로 한 줄에 다음 요소가 올 수 있음
+#### 3) 대체 박스 모델
+`box-sizing: border-box`

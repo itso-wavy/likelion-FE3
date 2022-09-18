@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            padding: 30px;
+            margin: 10px;
+            background-color: #faa;
+            border: 5px black solid;
+            box-sizing: border-box;
+        }
+        div:nth-child(2) {
+            padding-top: 70px;
+        }
+        div:nth-child(3) {
+            border-radius: 50px;
+        }
+        div:nth-child(4) {
+            border-radius: 50%;
+            border-top-left-radius: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>border-radius를 border-radius를 이용해 설명해보자</h1>
+    <div>여기 평범한 블록이 있습니다.</div>
+    <div>radius: px 단위는 블록의 한 꼭지점에서 px값을 반지름으로 하는 원을 그려 둥글게 만들어 줍니다.</div>
+    <div>radius: % 단위는 한꼭지점을 이루는 양쪽 모서리 길이의 % 값에서 둥글게 만들어 줍니다.
+    </div>
+</body>
+
+</html>

@@ -2,7 +2,6 @@
 디스코드, 노션, 깃헙 readme 등에 활용
 
 ## 1. 헤딩
-
  >  # 헤딩1
  >  ## 헤딩2
  >  ### 헤딩3
@@ -40,7 +39,6 @@
     * 역시 tab으로 구분
 
 ## 4. 텍스트
-
 ****굵게**
 
 **이탤릭* 또는 __이탤릭_
@@ -60,7 +58,6 @@
 ```
   
 ## 5. 하이퍼링크
-
 URL: www.google.com
 
 EMAIL: you.meet.vvavy@gmail.com
@@ -85,7 +82,6 @@ EMAIL: you.meet.vvavy@gmail.com
 ```
 
 ## 7. 테이블
-
 thead | thead | thead
  ---- | ----  | ----
 tbody | tbody | tbody
@@ -97,4 +93,3 @@ thead | thead | thead
 tbody | tbody | tbody
 tfoot | tfoot | tfoot
 ```
-
