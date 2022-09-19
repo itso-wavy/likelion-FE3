@@ -24,6 +24,18 @@
       - [4) fixed](#4-fixed)
       - [5) sticky(IE 지원 불가)](#5-stickyie-지원-불가)
       - [6) z-index](#6-z-index)
+    - [(8) float: 레이아웃②](#8-float-레이아웃)
+- [9/15(목)](#915목)
+  - [1. CSS(5)](#1-css5)
+    - [(9) CSS Selector 심화](#9-css-selector-심화)
+      - [1) Attribute selectors(속성 선택자): `^`(시작, 반대)/`$`(끝)/`*`(전체)/`~`(전체 중 단어)/`|`(하이픈)](#1-attribute-selectors속성-선택자-시작-반대끝전체전체-중-단어하이픈)
+      - [2) Pseudo-classes(가상 클래스)](#2-pseudo-classes가상-클래스)
+      - [3) Pseudo-elements(가상 요소)](#3-pseudo-elements가상-요소)
+    - [(10) Combinator(결합자)](#10-combinator결합자)
+    - [(11) Flex: 레이아웃③](#11-flex-레이아웃)
+      - [1) flex-container에 사용하는 속성](#1-flex-container에-사용하는-속성)
+      - [2) flex-item에 사용하는 속성](#2-flex-item에-사용하는-속성)
+  - [5. order: 음수 포함, 작은 숫자부터 우선 순위 부여](#5-order-음수-포함-작은-숫자부터-우선-순위-부여)
 ---
 # 9/13(화)
 `이호준 강사님`
@@ -142,3 +154,90 @@ right: 0;
 #### 6) z-index
 * `position: static`이 아닌 부모 요소의 z-index를 기준으로 -1 ~ n(양의 정수)로 표현함, 보통 10단위로 조절
 * 부모요소가 index를 높여서 자식 위로 올라갈 수는 없으나, 자식 z를 낮춰서 부모 뒤로 갈 수 있음
+> https://www.youtube.com/watch?v=JMOJrjMb95w
+
+### (8) float: 레이아웃②
+* `float:left`, `float:right`
+* 한편에 정렬이 되는 특성 때문에 블록 박스 요소를 정렬하는 기본 방법으로 사용됨
+* float를 적용한 요소는 `display: block`이 됨
+* <span style="color: palevioletred">float된 요소는 normal flow에서 벗어나게 되어</span>, 그 부모요소는 자식의 높이값을 인식하지 못하게 됨
+  * 대처법 
+    1. 부모에 높이 값을 직접 지정함(유지보수에 부적합)
+    2. 부모요소에 `overflow:`
+    3. **clear: both**/left/right
+    4. clear-fix
+        ```css
+        .wrap::after {
+        content:'';
+        display:block;
+        clear:both;
+        }
+        ```
+    5. 그 외 BFC를 만드는 방법
+        > BFC(Block Formatting Context): 안팎의 float를 해제/마진 병합 방어
+
+
+---
+# 9/15(목)
+`이호준 강사님` 
+
+## 1. CSS(5) 
+### (9) CSS Selector 심화
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvIHxv%2FbtrMoTzW3ME%2F8BaOzXWSB75Q3MBBXOLYek%2Fimg.png)
+
+#### 1) Attribute selectors(속성 선택자): `^`(시작, 반대)/`$`(끝)/`*`(전체)/`~`(전체 중 단어)/`|`(하이픈)
+  
+#### 2) Pseudo-classes(가상 클래스)
+* 존재하지 않는 유령 클래스를 선택, **특정 상태**에 발동
+<!-- 여백 처리시 많이 사용함 -->
+* ① 상호작용을 위한 가상 클래스: `:hover`, `:active`, `:checked`, `:focus`
+* ② 순서에 따른 가상 클래스: `:first-`, `:last-`, `:-child`, `:-of-type`, `:nth-(even/odd)`
+ 
+```html
+<style>
+input:hover {border: solid 5px green;}
+input:active {border: solid 5px blue;}
+input:focus {border: solid 5px red;}</style>
+<input id="id" name="id" type="text">
+```
+* 부정 가상 선택자 `:not()`는 최신기능이므로 사용 가능성 X
+
+#### 3) Pseudo-elements(가상 요소)
+* 존재하지 않는 유령 요소를 선택해서 꾸밈
+  
+`::before`, `::after`: 가상 요소는 선택이 되지 않음
+
+`::selection`
+
+`::first-letter`, `::first-line`
+
+### (10) Combinator(결합자)
+* ` `자손, `>`자식, `+`인접형제, `>`일반형제
+* 작성 순서대로 선택자의 방향도 흐른다!
+
+
+### (11) Flex: 레이아웃③
+> * https://flexngrid.com/
+> * https://flexboxfroggy.com/#ko
+
+* container 내 item 간의 `공간 배분`과 `정렬` 기능을 제공하는 **1차원 레이아웃** 모델
+* `display: flex`지만 Block 레벨 요소의 성질을 가짐
+* 컨테이너의 직계자식까지만 영향을 미침
+  
+#### 1) flex-container에 사용하는 속성
+1. **flex-direction**(축 방향): *row*/row-reverse/*column*/column-reverse
+2. **justify-content**(*주축* 기준 배분, 정렬): flex-start/flex-end/center/space-between/*space-around*
+* 지정된 너비/높이가 있어야 배분됨!
+3. **align-items**(**교차축** 기준 배분, 정렬): stretch(초기값)/*center*/flex-start/flex-end<br>
+align-content(+wrap): 교차축에 아이템이 여러 줄일 때 사용
+1. flex-wrap(줄 넘김): wrap/nowrap/wrap-reverse
+2. flex-flow(축약형): wrap column <!-- flex-wrap: wrap; flex-direction: colum -->
+
+#### 2) flex-item에 사용하는 속성
+* flex(속기법): basis, grow, shrink
+1. flex-basis(아이템 크기): 초기값 auto, width/height 무시하고 축과 컨텐츠 고려한 유연한 크기를 지정해줌(0, pm, em)
+2. flex-grow: 컨테이너 확장시 각각의 아이템에 여백 할당
+3. flex-shrink: 컨테이너 축소시 각각의 아이템에 크기 할당
+4. align-self: align-items 무시하고 개별 아이템에 align 속성 부여, 초기값 stretch
+5. order: 음수 포함, 작은 숫자부터 우선 순위 부여
+---
