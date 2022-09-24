@@ -223,11 +223,10 @@ input:focus {border: solid 5px red;}</style>
 * container 내 item 간의 `공간 배분`과 `정렬` 기능을 제공하는 **1차원 레이아웃** 모델
 * `display: flex`지만 Block 레벨 요소의 성질을 가짐
 * 컨테이너의 직계자식까지만 영향을 미침
-  
+* 배분 정렬시 지정된 너비/높이가 있어야 함
 #### 1) flex-container에 사용하는 속성
 1. **flex-direction**(축 방향): *row*/row-reverse/*column*/column-reverse
 2. **justify-content**(*주축* 기준 배분, 정렬): flex-start/flex-end/center/space-between/*space-around*
-* 지정된 너비/높이가 있어야 배분됨!
 3. **align-items**(**교차축** 기준 배분, 정렬): stretch(초기값)/*center*/flex-start/flex-end<br>
 align-content(+wrap): 교차축에 아이템이 여러 줄일 때 사용
 1. flex-wrap(줄 넘김): wrap/nowrap/wrap-reverse
