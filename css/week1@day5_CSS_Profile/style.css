@@ -1,0 +1,135 @@
+/* Reset */
+
+h1, h2, p  {
+    font-size: initial;
+    margin: initial;
+    font-weight: initial;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Layout */
+
+.wrapper {
+    width: 800px;
+    margin: 40px auto;
+    background-color: #eaeaea;
+}
+
+/* Fonts */
+
+* {
+    font-family: Arial;
+}
+
+/* Components */
+
+body {
+    background-image: url(images/background.gif);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.header {
+    color: white;
+    text-align: center;
+    border-radius: 3px 3px 0 0;
+    padding-top: 90px;
+    background-image: url(images/cover04.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.header img.profile {
+    width: 140px;
+    border: 5px solid white;
+    border-radius: 50% / 37px;
+}
+
+.header h1 {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.header p {
+    font-size: 11.5px;
+    font-weight: bold;
+    letter-spacing: 3.9px;
+    text-indent: 4px;
+    border-top: 4.5px white solid;
+    width: fit-content;
+    margin: 12px auto 0;
+    padding: 8px 2px 73px;
+}
+
+.section {
+    text-align: left;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right 30px center;
+    margin: 20px;
+    padding: 20px 20px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px -2px #aaa;
+}
+
+.section h2 {
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff1493;
+}
+
+.section ul {
+    color: #999999;
+    display: inline-block;
+}
+
+.section li {
+    border-left: 5px solid #eaeaea;
+    padding: 3px 3px 3px 10px;
+}
+
+.section li:hover {
+    color: #ffc0cb;
+    border-left: 5px solid #ffc0cb;
+}
+
+.info {
+    background-image: url(images/icon-information.png);
+}
+
+.skill {
+    background-image: url(images/icon-skills.png);
+}
+
+.footer {
+    background-color: #fff;
+    border-radius: 0 0 3px 3px;
+    color: #ddd;
+    text-align: center;
+}
+
+.link {
+    display: inline-block;
+    padding: 8px 18px;
+    margin: 20px 0px;
+    border: 1px solid;
+    border-radius: 30px;
+    color: inherit;
+}
+
+.link:hover {
+    color: black;
+    transition: 0.5s;
+}

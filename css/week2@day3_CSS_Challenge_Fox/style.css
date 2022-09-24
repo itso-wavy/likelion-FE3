@@ -1,0 +1,48 @@
+/* Reset */
+h1, p {
+    margin: 0;
+}
+
+img {
+    vertical-align: top;
+}
+
+/* Fonts */
+* {
+    font-family: Arial;
+}
+
+/* Layouts */
+.wrapper {
+    width: 300px;
+    margin: 50px auto;
+}
+
+
+/* Components */
+body {
+    background-image: url(images/bg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.animal-ground {
+    background-color: #93572e;
+    background-image: url(images/green.png);
+    background-repeat: no-repeat;
+    border-bottom: 10px solid #4a260b;
+    border-radius: 0 0 29px 29px;
+    padding: 63px 20px 30px 20px;
+}
+
+.animal-header {
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.animal-contents {
+    color: #d6bfb2;
+    line-height: 22.5px;
+}

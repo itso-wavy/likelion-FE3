@@ -1,0 +1,171 @@
+:root {
+    font-family: 'Montserrat', sans-serif;
+    /*
+	font-weight: 500;
+	font-weight: 700;
+	*/
+}
+
+/* reset */
+h1, h2, p, ul, figure {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+strong {
+    font-weight: inherit;
+    /* display: inline-block; */
+}
+
+/* Layout */
+.wrapper {
+    margin: 100px auto;
+    width: 1080px;
+}
+
+/* Components */
+body {
+    background-color: #673399;
+}
+
+.hidden {
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.portfolio-header {
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+}
+ 
+.portfolio-header-tit {
+    flex-basis: 90%;
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.portfolio-header-tit strong {
+    display: block;
+    position: relative;
+    width: max-content; /* display: inline-block도 가능 */
+}
+
+.portfolio-header-tit strong::after {
+    content: ' ';
+    display: block;
+    height: 20px;
+    left: 0;
+    right: 0;
+    background-color:#ff4500;
+    position: absolute;
+    margin: -20px 0;
+    z-index: -1;
+} 
+
+.portfolio-header-inst::before {
+    content: ' ';
+    display: block;
+    width: 300px;
+    height: 2px;
+    background-color: currentColor;
+    margin-right:23px;
+    display: block;
+}
+
+.portfolio-header-inst {
+    color: #a887e1;
+    font-size: 14px;
+    line-height: 1.65;
+    display: flex;
+    align-items: center;
+    margin-right: 245px;
+    position: relative;
+    top: 4px;
+} 
+
+.portfolio-cont {
+    margin: 100px 0;
+} 
+
+.portfolio-process-unit {
+    display: flex;
+    background-color: #fff;
+    margin-bottom: 24px;
+    height: 164px;
+} 
+
+.portfolio-process-unit:last-child {
+    margin-bottom: 0px;
+}
+
+.portfolio-process-fig {
+    font-size: 30px;
+    width: 26%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.portfolio-process-fig img{
+    width: 100%;
+    position: relative;
+    bottom: 12px;
+    z-index: 0;
+    opacity: 0.8; /* 이렇게 하면 안 되지만,,,ㅠ 컬러감이 다르지만 */
+    overflow: hidden;
+}
+
+
+.portfolio-process-fig figcaption {
+    z-index: 10;
+    color: white;
+    font-size: 30px;
+}
+
+.portfolio-process-desc {
+    padding: 24px;
+}
+
+.portfolio-process-desc p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    color: #673399;
+    font-weight: bolder;
+    line-height: 1;
+}
+
+.portfolio-process-desc ul {
+    position: relative;
+    bottom: 10px;
+}
+
+.portfolio-process-desc li {
+    font-size: 14px;
+    line-height: 1.7;
+    padding-bottom: 7px;
+    color: #555555;
+    font-weight: bolder;
+}
+
+.portfolio-process-desc li::before {
+    content: ' ';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #bd8fe8;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.portfolio-process-unit:nth-child(2n) {
+    flex-direction: row-reverse;
+}
