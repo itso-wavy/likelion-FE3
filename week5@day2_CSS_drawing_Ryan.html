@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *:after, *:before {
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #313654;
+        }
+
+        .ryan {
+            position: relative;
+            margin: 50px auto;
+            width: 400px;
+            height: 380px;
+        }
+
+        .ryan .face {
+            position: absolute;
+            bottom: 0;
+            width: 400px;
+            height: 367px;
+            border-radius: 50%;
+            border: 10px solid black;
+            background: #d59729;
+        }
+
+        .ryan .ear {
+            position: absolute;
+            top: 0;
+            width: 92px;
+            height: 92px;
+            border: 10px solid black;
+            border-radius: 50%;
+            background: #d59729;
+        }
+
+        .ryan .ear.left {
+            left: 54px;
+        }
+
+        .ryan .ear.right {
+            right: 54px;
+        }
+
+        .ryan .eyebrow {
+            position: absolute;
+            top: 106px;
+            width: 78px;
+            height: 14px;
+            border-radius: 14px;
+            background: black;
+            transition: all 0.2s;
+        }
+
+        .ryan .eyebrow.left {
+            left: 68px;
+        }
+
+        .ryan .eyebrow.right {
+            right: 68px;
+        }
+
+        .ryan .eye {
+            position: absolute;
+            top: 147px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: black;
+            transition: all 0.2s;
+        }
+
+        .ryan .eye.left {
+            left: 98px;
+        }
+
+        .ryan .eye.right {
+            right: 98px;
+        }
+
+        .ryan .nose {
+            position: absolute;
+            tOP: 184px;
+            left: 50%;
+            margin-left: -16px;
+            width: 32px;
+            height: 33px;
+            border-radius: 40% 40% 50% 50%;
+            background: black;
+            z-index: 2;
+        }
+
+        .ryan .mouth {
+            position: absolute;
+            top: 191px;
+            right: 73px;
+            width: 73px;
+            height: 68px;
+            border: 10px solid black;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .ryan .mouth.left {
+            left: 127px;
+        }
+
+        .ryan .mouth.right {
+            right: 127px;
+        }
+
+        .ryan .mouth:before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 33px;
+            background: white;
+            --webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            z-index: 1;
+        }
+
+        .ryan .mouth.left:before {
+            top: 2px;
+            left: 29px;
+        }
+
+        .ryan .mouth.right:before {
+            top: 2px;
+            right: 31px;
+        }
+
+        .ryan:hover .eyebrow.left {
+            top: 100px;
+        }
+
+        .ryan:hover .eyebrow.right {
+            transform: rotate(-10deg);
+        }
+
+        .ryan:hover .eye.right {
+            transform: scale(2, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ryan">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="face">
+            <div class="eyebrow left"></div>
+            <div class="eyebrow right"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose"></div>
+            <div class="mouth left"></div>
+            <div class="mouth right"></div>
+        </div>
+    </div>
+    
+</body>
+
+</html>!
