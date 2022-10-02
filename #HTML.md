@@ -1,68 +1,91 @@
-- [9/5 (월)](#95-월)
-  - [1. 피드백](#1-피드백)
-    - [(1) 더 자주, 빠르고, 꾸준하게](#1-더-자주-빠르고-꾸준하게)
-    - [(2) 피드백의 방향](#2-피드백의-방향)
-  - [2. HTML(2)](#2-html2)
-- [9/6 (화)](#96-화)
-  - [1. HTML(3)](#1-html3)
-    - [(4) Text-level semantics](#4-text-level-semantics)
-  - [2. HTML(4)](#2-html4)
-    - [(5) Embedded content](#5-embedded-content)
-- [9/7 (수)](#97-수)
-  - [1. HTML(5)](#1-html5)
-    - [(6) Forms](#6-forms)
-    - [(7) Tabular data](#7-tabular-data)
-  - [2. CSS: Cascading Style Sheets(1)](#2-css-cascading-style-sheets1)
-    - [(1) 우선순위](#1-우선순위)
-    - [(2) 벤더프리픽스](#2-벤더프리픽스)
-- [9/8 (목)](#98-목)
-  - [CSS(2)](#css2)
-    - [(3) CSS Selector](#3-css-selector)
-    - [(4) 박스 모델](#4-박스-모델)
-      - [1) 박스의 구성](#1-박스의-구성)
-      - [2) 박스의 유형(display):](#2-박스의-유형display)
-      - [3) 대체 박스 모델](#3-대체-박스-모델)
+## 1. HTML
+
+HTML: 웹문서 마크업 언어, 웹표준은 HTML Living Standard
+
+### (1) Document element & metadata
+
+`<!DOCTYPE html>`
+
+`<html>`
+
+`<head>`
+
+`<title>`
+
+`<link>`
+
+`<meta>`
+- charset
+- name="author": 문서 작성자
+- name="description": 설명, 검색어
+- name="viewport": 모바일 화면 사이즈 값 설정
+- http-equiv="X-UA-Compatible”: IE브라우저 페이지 랜더링 형식 지정
+
+### (2) Sections(섹셔닝 요소)
+
+`<body>`
+
+`<header>`
+
+**`<h1> … <h6>`**: <span style="color: palevioletred">
+__헤딩__, 페이지 계층 구조의 기준, 익명 영역(anonymous section)을 생성</span>. 다음 헤딩이 나타나기 전까지 해당 구역은 헤딩의 소속.
+
+```html
+<hgroup>
+<h1>제목</h1>
+<h2>소제목</h2>
+</hgroup>
+```
+`<nav>`
+
+`<section> + h$`: 연관성 있는 섹션이 2개 이상일 경우 사용. 섹션 내 헤딩에 속하지 않은 구역이 있어선 안 됨
+
+`<article> + h$`: 독립적, **위젯**
+
+`<aside>`: 사이드 영역, 각주 혹은 광고
+
+`<footer>`
+
+`<address>`
+
+### (3) Grouping content
+
+`<main>`
+
+`<div>`: `<header>, <nav>, <article>, <section>`와 같음
+
+`<p>`: 완결된 문단을 의미하는 시멘틱 태그, p>p 불가
+
+`<ol> `,  `<ul> `,  `<li>`: ol, ul의 직계 자식 요소로 li 요소만 사용됨
+
+`<dl>`, `<dt>`, `<dd>`: 정의 리스트, dl도 직계자식으로 dt, dd (+ div)만 가질 수 있음
+
+`<figure>`, `<figcaption>`: 캡션 달린 이미지
+
+**`<pre>`**: HTML에 작성한 내용 그대로 화면에 표현함. 주로 컴퓨터 코드 표현시 사용
+
+<pre>
+<code>
+    console.log('hello');
+</code>
+</pre>
+
+  ```HTML
+    <pre>
+    <code>
+      console.log('hello');
+    </code>
+    </pre>
+  ```
+  `<q>`, `<blockquote>`
+
+  `<hr>`: 주제 변경을 의미하는 시멘틱 태그
 
 
-
-# 9/5 (월)
-`* 임동준(메이커준) 강사님`
-
-* 2주에 한번 스프린트 회고시간에 만나게 됨
-
-## 1. 피드백
-### (1) 더 자주, 빠르고, 꾸준하게
-* 치면착색제 예시
-* 멋사에서는 내내 타인과 피드백을 주고받을 수 있는 환경이 마련되어 있음
-* 회고 시간을 통해 얻을 수 있는 것: 아는 즐거움 ➩ 변화하는 즐거움
-
-### (2) 피드백의 방향
-* 전체 교육 과정을 마무리 했을 때 나는 어떤 상태이면 만족할까?
-  * 우아한형제들 지원서
-  > 좋은 개발자의 덕목 3가지와 그 이유를 작성해주세요. 라는 질문에 내가 답한 덕목을 갖추고 있지 않다면 떨어지겠다고 생각, 부족함 채우려고 활동하다보니 나의 커리어가 그 방향으로 맞춰지더라.
-
-* 멋사 마무리에 내가 이루고 싶은 목표를 구체적인 장면으로 떠올리면서 작성하기, 그리고 역량과 목표를 수정하는 시간
-
----
-
-`* 한재현 강사님`
-
-## 2. HTML(2)
-* 강사님 구현 포인트 
-  * 헤딩 태그=구조화
-  * 섹션을 쓸 때는 형제 섹션이 필요함
-  * dt, dd는 의미가 추가된 리스트와 같은 역할
-  * 한줄 복사
-
+> Entity Code: **&amp;**(`&amp;`), **&lt;**(`&lt;`), **&gt;**(`&gt;`)
 > * [TED Tim Berners-Lee: Linked Data](https://www.youtube.com/watch?v=OM6XIICm_qo&t=332s)<br>
 > * [검색엔진 최적화(SEO) 기본 가이드](https://developers.google.com/search/docs/beginner/seo-starter-guide?hl=ko&visit_id=637979483710948537-736098899&rd=1)
 
-
----
-# 9/6 (화)
-`* 한재현 강사님`
-
-## 1. HTML(3)
 ### (4) Text-level semantics
 `<br>`, `<wbr>`: wbr은 단어 중간에서 행바꿈될 수 있는(line-break) 위치를 정의
 > * CSS word-break: CJL(중일한어) 속성은 기본적으로 break-all
@@ -90,11 +113,6 @@
 
 `<span>`
 
----
-
-`이호준 강사님` 
-
-## 2. HTML(4)
 ### (5) Embedded content
 `<img src>`
 ```html
@@ -138,12 +156,6 @@ alt="test">
 
 `<iframe>`: 페이지 내 페이지 생성, DBD 공격에 이용될 수 있어 제한되는 경우가 많음
 
-
----
-# 9/7 (수)
-`* 이호준 강사님`
-
-## 1. HTML(5)
 `<vedio>`
 
 * 유투브 영상 임베디드의 문제
@@ -231,65 +243,3 @@ alt="test">
 > border-collapse: collapse;
 
  colspan, rowspan: 셀합치기 
-
-## 2. CSS: Cascading Style Sheets(1) 
-: 우선순위에 따라 적용되는 스타일 언어
-```css
-Selector(선택자) { /* Declaration Block(선언블록) */
-    Property(속성): Value(값);
-}
-```
-
-### (1) 우선순위
-* 내부, 외부 중 작성순서에 따라 적용
-  * 내부 CSS
-  * 외부 CSS: 공통 CSS+커스텀 CSS
-  * 인라인 CSS(비권장)
-
-* 다중 스타일시트(엣룰): @charset, @import, @font-face, @keyframes, @media, @supports
-> link header.css ➩ @import "menu.css"
-### (2) 벤더프리픽스
-> 오토프리픽서 CSS: https://autoprefixer.github.io/
-
-
----
-# 9/8 (목)
-`* 이호준 강사님`
-## CSS(2)
-
-> 웹디자인대회 4개, 최종프로젝트 **마켓(MPA < 리액트 < SPA바닐라) 언급
-  
-### (3) CSS Selector
-* 전체 선택자, 타입 선택자, 아이디 선택자, 클래스 선택자
-* 선택자 우선순위: 후자 우선의 원칙, 구체성(명시도)의 원칙, 중요성의 원칙
-  * Specificity(구체성): 타입/가상요소(::) < class/가상클래스(:)/속성 < id < inline-style, 전체선택자는 무시됨
-* [셀렉터 심화]()
-
-### (4) 박스 모델
-#### 1) 박스의 구성
-   * 콘텐츠(content): width X height
-   * 패딩, 보더, 마진
-   > 참고 [border-radius](css/week2@border-radius.html)
-   * **마진 병합**(겹침) 현상
-     * 정의: 블록 요소 사이의 상하단 마진이 맞닿으면 하나로 병합되는 현상(두 마진의 크기가 다르면 큰 쪽으로 병합)
-     * 대상: 형제/부모자식/빈 블록 자기자신의 상하단 마진
-     * 블럭요소의 마진이 0이어도 발생함
-     * CSS 제작자의 디자인적 의도가 담긴 것으로 문제가 아님, 그럼에도 불구하고...
-        1. <span style="color: palevioletred; margin-left: 30px;">부모요소에 border/padding: 1px transparent ➩ 눈에 보임</span>
-        2. <span style="color: palevioletred; margin-left: 30px;">display: inline-block ➩ 근본적 해결책이 아님</span>
-        3. <span style="color: palevioletred; margin-left: 30px;">부모요소에 display: flow-root ➩ IE 지원 불가</span>
-        4. <span style="color: palevioletred; margin-left: 30px;">부모요소에 overflow: hidden ➩ 그림자 등이 잘려보일 수 있음</span>
-#### 2) 박스의 유형(display): 
-   * ① 블록
-     * 가용 너비의 가로 100%를 사용, 사용하지 못하는 공간은 마진으로 채움
-     * width, height로 컨트롤
-     * 패딩, 보더, 마진이 다른 요소를 밀어냄
-   * ② 인라인
-     * 컨텐츠 박스만큼의 너비만 가지므로 한 줄에 다음 요소가 올 수 있음
-     * width, height로 컨트롤 불가
-     * 패딩, 보더, 좌우마진을 가짐 / **이들의 상하값은 다른 요소를 밀어내지 않음**
-   * ③ 인라인-블록
-     * 블록처럼 width, height, 패딩, 보더, 마진 지정 가능
-     * 가로를 다 차지하지 않으므로 한 줄에 다음 요소가 올 수 있음
-#### 3) 대체 박스 모델
-`box-sizing: border-box`

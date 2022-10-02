@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUME</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <style>
+        .visually-hidden {
+            overflow: hidden;
+            display: inline-block;
+            border: 0;
+            position: absolute;
+            z-index: -1;
+            width: 1px;
+            height: 1px;
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+        }
+
+        #a4-paper {
+            font-family: 'Gowun Dodum', sans-serif;
+            width: 8.5in;
+            height: 12in;
+            box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
+        }
+
+        @media print {
+            @page {
+                size: 8.5in 12in;
+            }
+
+            #a4-paper {
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                margin: 0 auto;
+                padding: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="a4-paper" class="box-border my-0 mx-auto px-12 py-8 flex flex-col justify-between">
+        <h1 class="visually-hidden">이력서</h1>
+        <section class="bg-white flex p-5">
+            <div class="w-2/6">
+                <h2 class="text-5xl">은혜연</h2>
+                <div class="mt-10">
+                    <p class="text-2xl">웹 프론트엔드</p>
+                    <p>스스로 생각하는 주니어 개발자
+                    <p class="text-sm  text-gray-500 mt-5 mr-9">주체적이며 성장하는 삶에 관심을 가집니다. 계획과 기록 안에서 생각의 자유를 향유합니다. 매일 진심을
+                        담아 블로그에 자취를 남기는 중입니다.</p>
+                    </p>
+
+                </div>
+                <div class="mt-5 flex flex-col justify-around h-30 text-blue-600">
+                    <a href="tel:010-XXXX-XXXX">010-XXXX-XXXX</a>
+                    <a href="mailto:abcdefg@gmail.com">abcdefg@gmail.com</a>
+                    <p>블로그 <a class="underline" href="abcdefg.tistory.com">abcdefg.tistory.com</a></p>
+                    <p>깃헙 <a class="underline" href="github.com/abcdefg">github.com/abcdefg</a></p>
+                </div>
+            </div>
+
+            <div class="w-4/6 border-t-4 border-black pt-5">
+                <img class="w-44 m-auto rounded-3xl text-center " src="asset/img/profile.png" alt="profile">
+                <div class="pt-5">
+                    <ul class="list-disc ml-8">
+                        <li class="pb-2"><span class="text-sm  text-gray-500">언어: </span>
+                            HTML5/CSS3/JavaScript</li>
+                        <li class="pb-2"><span class="text-sm  text-gray-500">프레임워크, 라이브러리: </span><br>
+                            React/Redux/Vue.js/Sass/Tailwind CSS/BootStrap</li>
+                        <li class="pb-2"><span class="text-sm  text-gray-500">시각화, 디자인: </span>
+                            Figma/Canvas/Chart.js/Photoshop</li>
+                        <li class="pb-2"><span class="text-sm  text-gray-500">그 외: </span>
+                            GitHub/Google Workspace/Slack/Notion</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white flex p-5 ">
+            <div class="w-2/6">
+                <h2 class="text-2xl border-t border-black" style="width: fit-content">경험</h2>
+            </div>
+            <div class="w-4/6 border-t-4 border-black pt-5">
+                <ul class="list-disc ml-8">
+                    <li class="pb-2">개인 프로젝트 &lt;<a class="text-blue-600 underline"
+                            href="github.com/abcdefg">XXXXXX</a>&gt;
+                        <span class="text-sm text-gray-500"> JavaScript/React (22.10~22.11, 2개월)</span>
+                        <p class="pt-1 text-sm">
+                            나는 가슴속에 어머님, 하늘에는 아스라히 봅니다. 벌써 가슴속에 추억과 나는 토끼, 별 별에도 무엇인지 까닭입니다. 불러 자랑처럼 슬퍼하는 겨울이 때 있습니다.
+                            노루, 언덕 패, 때 사랑과 비둘기, 아스라히 버리었습니다.</p>
+                    </li>
+                    <li class="pb-2">팀 프로젝트 &lt;<a class="text-blue-600 underline"
+                            href="github.com/abcdefg">XXXXXX</a>&gt;
+                        <span class="text-sm text-gray-500"> JavaScript/React (22.12~23.01, 1개월)</span>
+                        <p class="pt-1 text-sm">
+                            나는 가슴속에 어머님, 하늘에는 아스라히 봅니다. 벌써 가슴속에 추억과 나는 토끼, 별 별에도 무엇인지 까닭입니다. 불러 자랑처럼 슬퍼하는 겨울이 때 있습니다.
+                        </p>
+                    </li>
+                    <li class="pb-2">프로젝트 &lt;<a class="text-blue-600 underline" href="github.com/abcdefg">감귤마켓</a>&gt;
+                        <span class="text-sm text-gray-500"> JavaScript/React (22.12, 1주)</span>
+                    </li>
+                    <li class="pb-2">프로젝트 &lt;<a class="text-blue-600 underline" href="github.com/abcdefg">렌딩페이지</a>&gt;
+                        <span class="text-sm text-gray-500"> JavaScript/React (22.11, 3일)</span>
+                    </li>
+                    <li class="pb-2">&lt;XXXXXXX&gt; 수상
+                        <span class="text-sm text-gray-500"></span>
+                    </li>
+                    <li class="pb-2">&lt;XXXXXX&gt; 오픈소스 기여
+                    </li>
+                    <li class="pb-2">&lt;2022XXXXXXX&gt; 해커톤 참여
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="bg-white flex p-5">
+            <div class="w-2/6">
+                <h2 class="text-2xl border-t border-black" style="width: fit-content">경력</h2>
+            </div>
+            <div class="w-4/6 border-t-4 border-black pt-5">
+                <p class="pb-2">(주)XXXXXXX / XXXXX부
+                    <span class="text-sm text-gray-500"> (XX.XX~XX.XX, 5년)</span>
+                </p>
+                <p class="pt-1 text-sm">
+                    - 나는 가슴속에 어머님, 하늘에는 아스라히 봅니다. 벌써 가슴속에 추억과 나는 토끼, 별 별에도 무엇인지 까닭입니다.<br>
+                    - 노루, 언덕 패, 때 사랑과 비둘기, 아스라히 버리었습니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-white flex p-5">
+            <div class="w-2/6">
+                <h2 class="text-2xl border-t border-black" style="width: fit-content">학력</h2>
+            </div>
+            <div class="w-4/6 border-t-4 border-black pt-5">
+                <p class="pb-2">멋쟁이사자처럼 / Front-End School
+                    <span class="text-sm text-gray-500"> (22.08~23.01)</span>
+                </p>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>
