@@ -1,8 +1,8 @@
-## 1. HTML
+# 1. HTML
 
 HTML: 웹문서 마크업 언어, 웹표준은 HTML Living Standard
 
-### (1) Document element & metadata
+## (1) Document element & metadata
 
 `<!DOCTYPE html>`
 
@@ -21,7 +21,7 @@ HTML: 웹문서 마크업 언어, 웹표준은 HTML Living Standard
 - name="viewport": 모바일 화면 사이즈 값 설정
 - http-equiv="X-UA-Compatible”: IE브라우저 페이지 랜더링 형식 지정
 
-### (2) Sections(섹셔닝 요소)
+## (2) Sections(섹셔닝 요소)
 
 `<body>`
 
@@ -48,7 +48,7 @@ __헤딩__, 페이지 계층 구조의 기준, 익명 영역(anonymous section)�
 
 `<address>`
 
-### (3) Grouping content
+## (3) Grouping content
 
 `<main>`
 
@@ -86,7 +86,7 @@ __헤딩__, 페이지 계층 구조의 기준, 익명 영역(anonymous section)�
 > * [TED Tim Berners-Lee: Linked Data](https://www.youtube.com/watch?v=OM6XIICm_qo&t=332s)<br>
 > * [검색엔진 최적화(SEO) 기본 가이드](https://developers.google.com/search/docs/beginner/seo-starter-guide?hl=ko&visit_id=637979483710948537-736098899&rd=1)
 
-### (4) Text-level semantics
+## (4) Text-level semantics
 `<br>`, `<wbr>`: wbr은 단어 중간에서 행바꿈될 수 있는(line-break) 위치를 정의
 > * CSS word-break: CJL(중일한어) 속성은 기본적으로 break-all
 > * CSS white-space: `p { white-space: pre; }`
@@ -113,7 +113,7 @@ __헤딩__, 페이지 계층 구조의 기준, 익명 영역(anonymous section)�
 
 `<span>`
 
-### (5) Embedded content
+## (5) Embedded content
 `<img src>`
 ```html
 <img src="a.jpg">
@@ -169,7 +169,7 @@ alt="test">
 
 > 속도조절: document.getElementsByTagName("video")[0].playbackRate = 2.5;
 
-### (6) Forms
+## (6) Forms
 ![](https://paullabworkspace.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa33523d6-7106-4de0-8510-400291266748%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-10-06_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_11.06.41.png?table=block&id=cbcd1dde-2b64-46cc-880b-ff93347155ec&spaceId=579fe283-28aa-489d-ae65-d683304becfc&width=1600&userId=&cache=v2)
 
 * action: input value를 전송할 페이지<br>
@@ -226,7 +226,7 @@ alt="test">
 </datalist>
 ```
 
-### (7) Tabular data
+## (7) Tabular data
 
 `<table>`
 
