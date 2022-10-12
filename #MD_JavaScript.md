@@ -1,9 +1,6 @@
 # JavaScript
 
-## (0) REPL
-
-
-## (1) 브라우저 콘솔
+## (0) REPL / 브라우저 콘솔
 ### 1) 단축키
 
 - 열기: ctrl + shift + J
@@ -43,7 +40,7 @@ console.groupEnd();
 ```
 
 
-## (2)  Data types
+## (1)  Data types
 JS가 알고 있는 데이터, ㄱㄴㄷ
 ### 1) 원시 타입
 - number: integer 정수, float 소수, NaN
@@ -85,7 +82,44 @@ Number("10") + Number("10"); // 비권장
 parseInt("10") + parseInt("10"); // 권장 -->
 
 
-## (3) 연산자
+## (2) Variables변수
+값을 저장하고 유지하여 코드의 반복 작성을 줄여줌
+### 1) 선언(=정의) <!-- TODO: -->
+- 항상 const: 상수
+- 가끔 let: 블록 스코프 변수
+- 절대 var: 함수 스코프 변수
+ 
+### 2) 변수 명명과 규칙
+- 가능: 한글 식별자, 문자 대소문자 구별, 특수문자($, _) 시작, 유니코드언어
+> let _ = 100; // 반복문 돌 때 의미없는 변수에 사용
+- 불가능: 숫자 시작, 예약어(let, const, var, if, else), 띄어쓰기
+- 주로 첫 글자를 소문자로 하는 카멜 케이스 이용(<->스네이크 케이스)
+- 변수 이름은 길고 구체적일 것, 불리언 변수에는 앞에 is를 붙이면 더 분명해짐
+
+
+## (3) String문자열
+### 1) 메모리 구성
+- **유사배열**(index와length) 
+- 이터러블
+- 각각 3byte의 char로 잡히는 캐릭터 어레이
+
+### 2) 객체 형태
+- 인덱스 + 길이 + `[[prototype]]`(키값)
+- 객체지만 안에서는 primitive type
+
+### 3) String Method
+> * 접합: 'abc' + ' ' + 'def' = 'abc def'
+> * 비파괴메서드 = 순수함수
+
+- split() ➩ 배열
+- replace(,) / repeat() / padStart(,)
+- slice(,?) ≒ subString(,) / concat() / splice(,,?) / split() 
+- indexof() / includes() 
+- toUpperCase(), toLowerCase(), trim() 
+- startsWith(), endsWith() ➩ 불리언
+
+
+## (4) 연산자
 ### 1) 기본 연산자
  - `+`, `-`, `*`, `/`
  - `**`(지수 연산자), `%`(modular)
@@ -122,7 +156,7 @@ parseInt("10") + parseInt("10"); // 권장 -->
 - delete, typeof, instanceof, void 
 
 
-## (4) Math 객체
+## (5) Math 객체
 - Math.PI: 3.141592653589793
 - Math.floor(): 소숫점 아래 내림
 - Math.ceil(): 소숫점 아래 올림
@@ -131,38 +165,6 @@ parseInt("10") + parseInt("10"); // 권장 -->
  `Math.floor(Math.random() * 선택지개수) + N`
 - Math.abs(): 절댓값
 - Math.pow(x, y): x의 y 제곱
-
-
-## (5) Variables변수
-값을 저장하고 유지하여 코드의 반복 작성을 줄여줌
-### 1) 선언(=정의) <!-- TODO: -->
-- 항상 const: 상수
-- 가끔 let: 블록 스코프 변수
-- 절대 var: 함수 스코프 변수
- 
-### 2) 변수 명명과 규칙
-- 가능: 한글 식별자, 문자 대소문자 구별, 특수문자($, _) 시작, 유니코드언어
-> let _ = 100; // 반복문 돌 때 의미없는 변수에 사용
-- 불가능: 숫자 시작, 예약어(let, const, var, if, else), 띄어쓰기
-- 주로 첫 글자를 소문자로 하는 카멜 케이스 이용(<->스네이크 케이스)
-- 변수 이름은 길고 구체적일 것, 불리언 변수에는 앞에 is를 붙이면 더 분명해짐
-
-
-## (6) String문자열
-### 1) 메모리 구성: 유사배열
-- 인덱스
-- 이터러블
-- length - 1 === 최대 인덱스
-- 접합: 'River' + " " + 'Phoenix' = 'River Phoenix'
-
-### 2) String Method
-- .toUpperCase(), .toLowerCase(), .trim(), .slice([,]), .replace(,), repeat(): 비파괴메서드
-- .indexof(), .slice([,]), .replace(,), repeat(), .includes(), .concat(), .split(), .padStart(,), substr(,): 인수가 있는 문자열 규칙
-
-
-4) Templete Literal템플릿 리터럴: 리터럴 양식. 표현식을 평가(계산, 판단)해서 문자식으로 바꿔줌 
-//         `${ }`  <-- 괄호 안에 변수가 들어감
-//      리터럴 = 직접 보이는 데이터 <-> 상수, 변수
 
 
 //// 11. Arrays배열 = 데이터(element요소) 리스트
