@@ -192,5 +192,109 @@ A > B일 때 slice(A, B)는 작동하지 않으나 substring(A, B)는 substring(
 - delete, typeof, instanceof, void 
 
 
+## (6) 객체: 변수 선언 모음
+순서없는 '키 + 값'쌍 데이터(Property속성) 집합체 (배열, 함수, 기타)
+
+### 1) 생성: `{}`, `Object()`
+객체의 키는 문자열로 저장된다.
+
+### 2) 접근: key
+- 괄호 표기법은 접근 전 평가단계를 거친다. 
+```js
+obj.2; // = error!
+obj['on' + 'e']; // string이니까 접합 가능! 
+``` 
+<!-- 
+- 객체에서 키가 number인 값에 접근할 수 있는 점 표기법은 없을까?(map 사용 말고) 만약 그렇다면 불편하더라도 괄호 표기법이 더 유용하다. 
+- 대괄호[] 안의 데이터는 모두 string 취급되는 것 같다. 그러니 인덱스를 음수로 찾으려고 해도 ["-1"] 따위를 찾을 수 없어서 음수 인덱스는 쓸 수 없는 것-->
+- 객체 외부 데이터에 엑세스
+```js
+const second = 2;
+obj.second; // = error!
+obj[second]; // = obj["2"] = "two"
+```
+### 3) 수정(추가/삭제/변경)
+#### i. key
+#### ii. 각 객체의 내장함수 <!-- FIXME: -->
+<!-- 키 변경은 스트링으로 접근, 값 변경은 키로 접근하면 될 듯 -->
+
+### 4) Nested objects중첩 객체
+객체 속 객체, 객체 속 배열(일부 데이터에만 순서를 주고 싶을 때)
+
+
+## (7) Sparse Arrays배열
+- index순서 + length길이 + element요소 
+- 해시를 통해 스택과 힙에 저장
+
+### 1) 생성: `[]`, `Array()`, `Array.from()`, `Array.of()`
+`typeof array // = object`
+```js
+Array(1) // 숫자 인자 1개는 배열의 길이
+Array(1, 2, 3) // 숫자 인자가 2개 이상이면 배열의 요소
+Array({}) // 숫자가 아닌 인자는 배열의 요소
+
+Array.of(1) // = [1] ⇔ Array(1) // [empty]
+```
+### 2) 접근: index
+
+### 3) 수정(추가/삭제/변경): 
+#### i. index 
+#### ii. ARRAY METHODS배열내장함수
+
+- **생성
+- **추가, 제거(stack, queue)**: push() / pop() / unshift() / shift()
+- **접합, 변형, 정렬**: concat() / slice() / splice() / fill() / flat() / reverse() ⇔ sort()
+- **대답하기**: indexOf() / includes()
+<!-- indexOf: 인수와 처음 일치하는 인덱스를 반환
+sort: 요소 첫째자리 기준으로 정렬 -->
+- 비순수함수: fill(), splice(), reverse() / push, pop, unshift, shift()
+- 고차함수 ⊂ (순수함수=비파괴메서드): 인자로 함수를 받음<br>
+reverse, sort() / map, filter, find() / fill, reduce()
+<!-- map은 뽑아내고 filter는 걸러내고 find 처음일치값 찾아냄 -->
+<!-- FIXME: -->
+* filter()
+* forEach()
+* some()
+* join() / toString() ➩ 스트링 
+<!-- join 배열에서 스트링으로 ⇔ split 스트링에서 배열로 -->
+> static function: 인자를 필요로 하지 않는 함수
+
+### 4) Nested arrays중첩 배열: 배열 속 배열, 배열 속 객체
+
+
+## (8) 조건문
+### 1) if 조건문
+조건(cdt)의 범위는 좁은 곳에서 넓은 곳으로 
+```js
+if (cdt1) {           
+    // cdt1 === true이면 실행
+} else if (cdt2) {    
+    // cdt1 === false && cdt2 === true이면 실행
+} else {              
+    // cdt1 === false && cdt2 === false이면 실행
+}
+```
+
+### 2) switch 조건문
+```js
+const arg = opt;
+switch (arg) {
+    case opt1:  // arg === opt1이면 실행
+        break;
+    case opt2:  // arg === opt2이면 실행
+        break;
+    default:    // arg !== (opt1 && opt2)이면 실행, default 위치는 어디든 가능
+    // 마지막 항목은 break 생략
+}
+```
+
+### 3) 조건부 네스팅(Nesting): 조건문 속 조건문
+
+
+## (9) Loop반복문
+### 1) for (let) 루프
+
+### 2) while 루프
+
 
 
