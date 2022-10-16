@@ -1,3 +1,20 @@
+<style>
+    h2 {
+        background-color: 	#00e83a;
+    }
+    h3 {
+        background-color: 	#60d0fb;
+    }
+    h4 {
+        background-color: gold;
+    }
+    em {
+        text-decoration: underline red;
+    }
+
+</style>
+
+
 # 1. HTML
 
 HTML: 웹문서 마크업 언어, 웹표준은 HTML Living Standard

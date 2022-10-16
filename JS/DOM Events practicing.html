@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Grocery List</title>
+</head>
+
+<body>
+    <h1>Grocery List</h1>
+    <form action="/nowhere">
+        <label for="item">Enter A Product</label>
+        <input type="text" id="product" name="product">
+        <label for="item">Enter A Quantity</label>
+        <input type="number" id="qty" name="qty">
+        <button>Submit</button>
+    </form>
+
+    <ul id="list"></ul>
+    <script>
+        const form = document.querySelector('form');
+        const ul = document.querySelector('ul');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const product = form.elements.product.value;
+            const qty = form.elements.qty.value;
+            const li = document.createElement('li');
+            li.innerText = qty + ` ${product}`;
+            ul.appendChild(li);
+            form.elements.product.value = '';
+            form.elements.qty.value ='';
+        })
+        </script>
+</body>
+
+</html>

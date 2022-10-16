@@ -1,25 +1,45 @@
+<style>
+    h2 {
+        background-color: 	#00e83a;
+    }
+    h3 {
+        background-color: 	#60d0fb;
+    }
+    h4 {
+        background-color: gold;
+    }
+    strong, em {
+        text-decoration: underline red;
+    }
+</style>
+
+
 # JavaScript
-
 ## (0) REPL / 브라우저 콘솔
-### 1) 단축키
+### 1) 개발과 소개
+1. 웹페이지의 동작 담당
+1. Brendan Eich(브랜든 아이크)  개발(1995): 라이브 스크립트 ➩ 자바 스크립트
+1. ECMAScript 표준안, ES6(2015)부터 고급 문법 추가(cf. W3C는 웹표준 제정)
+1. 브라우저, 서버에서 실행(Chrome, Node의 V8 엔진 - 자바스크립트 가상 머신)
+1. 파싱, 컴파일 ➩ 고급언어 ➩ 어셈블리어 ➩ 기계어
+1. cf. 커피스크립트, 타입스크립트
 
-- 열기: ctrl + shift + J
-- 지우기: clear(), ctrl + L
-- shift + enter 또는 ``: 줄 바꿈
-- ? 는 필수 입력이 아니라는 뜻
+### 2) 실행
+- 문서 내 어디에도 `<script>` 태그 삽입 가능
+- 외부 스크립트/내부 스크립트/인라인
 
-### 2) 콘솔 메서드
-* console.`log/warn/error/info/time/dir()`, `alert/prompt()`
-   - console.log(): 출력
-   - console.warn(): 경고
-   - console.error(): 에러
-   - console.dir(): 객체의 데이터
+### 3) 콘솔 메서드
+- console.`log/warn/error/info/time/dir()`, `alert/prompt()`
+   1. console.log(): 출력
+   1. console.warn(): 경고
+   1. console.error(): 에러
+   1. console.dir(): 객체의 데이터
 
 > ex. let userInput =  prompt("") ➩ 입력값 얻기 ➩ parseInt(userInput) ➩ 출력값 얻기<br>
 >> cf. prompt 입력값은 (빈칸, 숫자, 문자, ...)무조건 string 취급<br>
 >> cf. parseInt()는 인자의 앞에 붙은 정수값을 파싱(분석)하여 숫자 데이터로 변환해줌
 
-* console.`table()`, `group()`, `groupEnd()`
+- console.`table()`, `group()`, `groupEnd()`
   
 ```js
 console.table(data);
@@ -39,13 +59,21 @@ console.groupEnd();
 console.groupEnd();
 ```
 
+### 4) 문(statement)
+1. `;`로 구분, 값/연산자/키워드/명령어/표현식
+2. 공백 병합
+   - 함수나 메서드 내 연산식
+   - 선언식 / object 자료형 내
+   - 메서드 체이닝
+   - 따옴표는 인식 불가, 템플릿 리터럴로 바꿔야 가능
+
 
 ## (1)  Data types
 JS가 알고 있는 데이터, ㄱㄴㄷ
 ### 1) 원시 타입
-- number: integer 정수, float 소수, NaN
-- string: 문자'열'
-- boolean: 예/아니오, 참/거짓값, 0/1
+1. number: integer ±정수, float 부동소수점숫자, ±Infinity, NaN
+2. string: 문자'열'
+3. boolean: 예/아니오, 참/거짓값, 0/1
 ```md
 **False-y**
 - false
@@ -55,9 +83,9 @@ JS가 알고 있는 데이터, ㄱㄴㄷ
 - undefined
 - NaN
 ```
-- undefined: 정의되지 않음 💬 = ⬜
-- null: 값이 없음을 정의 💬 = ⬛(typeof object)
-- symbol
+4. undefined: 정의되지 않음 💬 = ⬜
+5. null: 값이 없음을 정의 💬 = ⬛(typeof object)
+6. symbol
 
 ```md
 **전역속성 NaN** 
@@ -68,7 +96,8 @@ JS가 알고 있는 데이터, ㄱㄴㄷ
 ```
 
 ### 2) 참조 타입: 내장 메서드 탑재
- - Object객체: 배열, 함수...<!-- FIXME: -->
+ 1. Object객체: object/array/map/set
+ 2. 함수<!-- FIXME: -->
 
 ### 3) 타입 변환(형변환)
 <!-- FIXME: -->
@@ -79,26 +108,30 @@ JS가 알고 있는 데이터, ㄱㄴㄷ
 parseInt("10") + parseInt("10"); // 권장 -->
 
 
-## (2) Variables변수
+## (2) 변수와 상수
 값을 저장하고 유지하여 코드의 반복 작성을 줄여줌
 
 ### 1) 선언(≒정의) <!-- TODO: -->
 - 항상 const: 상수
 - 가끔 let: 블록 스코프 변수
 - 절대 var: 함수 스코프 변수
+> const, let으로 재선언시 error, 그러나 콘솔에서만 에러가 나지 않을 수 있음
+> 블록 스코프 선언 키워드를 사용시, 함수/블록 밖에서 선언해야 함
  
 ### 2) 변수 명명과 규칙
-- 가능: 한글 식별자, 문자 대소문자 구별, 특수문자($, _) 시작, 유니코드언어
-- 불가능: 숫자 시작, 예약어(let, const, var, if, else), 띄어쓰기
-> let _ = 100; // 반복문 돌 때 의미없는 변수에 사용
-- 주로 첫 글자를 소문자로 하는 카멜 케이스 이용(⇔ 스네이크 케이스)
-- 변수 이름은 길고 구체적일 것, 불리언 변수에는 앞에 is를 붙이면 더 분명해짐
+1. 가능: 한글 식별자, 문자 대소문자 구별, 특수문자($_) 시작, 유니코드언어<br>
+불가능: 숫자 시작, 예약어(let, const, var, if, else), 띄어쓰기
+    > let _ = 100; // 반복문 돌 때 의미없는 변수에 사용<br>
+    > $_(달러함수)는 보통 DOM 탐색, 또는 함수명에 사용
+
+1. 주로 첫 글자를 소문자로 하는 카멜 케이스 이용(⇔ 스네이크 케이스)
+1. 변수 이름은 길고 구체적일 것, 불리언 변수에는 앞에 is를 붙이면 더 분명해짐
 
 
 ## (3) String문자열
 ### 1) 메모리 구성
-- **유사배열**(index와length) 
-- 이터러블
+- **유사배열객체**(index와length) 
+- 이터러블(iterable)
 - 각각 3byte의 char로 잡히는 캐릭터 어레이
 
 ### 2) 객체 형태
@@ -108,23 +141,26 @@ parseInt("10") + parseInt("10"); // 권장 -->
 ### 3) String Method
 <!-- TODO: 배열메서드와 교집합 확인 -->
 
-- **추가, 접합, 변형**: concat / replace / replaceAll / repeat / toUpperCase / toLowerCase / toString / trim / padStart / padEnd<br>
-- **자르기**: slice ≒ substring / split ➩ 배열<br>
+1. **추가, 접합, 변형**: concat / replace / replaceAll / repeat / toUpperCase / toLowerCase / toString / trim / padStart / padEnd<br>
+1. **자르기**: slice ≒ substring / split ➩ 배열<br>
 slice는 자르기, substring는 부분문자열, split은 쪼개기<br>
 A > B일 때 slice(A, B)는 작동하지 않으나 substring(A, B)는 substring(B, A)로 변환해서 작동함
-- **대답하기**: indexof ➩ 인덱스값, includes / startsWith / endsWith ➩ 불리언
-> concat, indexof, includes는 배열 메서드이다
+1. **대답하기**: indexof ➩ 인덱스값, includes / startsWith / endsWith ➩ 불리언
+> concat, indexof, includes는 문자열과 어레이에 모두 존재하는 메서드
 
 ### 5) 일시적 형변환(일시적 객체)
 
 ### 6) 정규표현식
 <!-- FIXME: -->
-`정규식: new RegExp(/정규표현식/`)
+`정규식: new RegExp(/정규표현식/)`
 
-#### 메서드
-#### 플래그
-#### 예약어
-#### 이스케이프 문자(`\`): 
+#### ① 메서드
+
+#### ② 플래그
+
+#### ③ 예약어
+
+#### ④ 이스케이프 문자(`\`): 
 특수문자, 예약어에게 기능을 벗어나 스트링 리터럴로 돌아갈 수 있도록 함. `\`뒤의 문자까지 한글자 처리
 - `"hello \"world\"" // 'hello "world"'`
 - `\n` 엔터
@@ -133,16 +169,22 @@ A > B일 때 slice(A, B)는 작동하지 않으나 substring(A, B)는 substring(
 - `\d` `\D` 숫자
 - `\w` `\W` 워드 (=`[A-Za-z0-9_]`)
 
-⑤ **그룹화**
+#### ⑤ *그룹화*
 
 ## (4) Number
 ### 1) 소수 처리 문제 
 0 < x < Number.EPSILON이면 x는 표현하지 못하는 수가 됨
 > Number.EPSILON ≒ 2.2204 * 10^-16
 
-큰 수는 BigInt 객체로 처리
+큰 수는 BigInt 객체로 처리(123...n)
 
-### 2) Math 객체
+### 2) Number 객체
+- Number.EPSILON
+- Number.MAX_VALUE: JS가 표현할 수 있는 제일 큰 숫자
+- Number.MAX_SAFE.INTEGER: JS가 안전하게 표현할 수 있는 최대 정수값
+- Number.MIN_SAFE.INTEGER: JS가 안전하게 표현할 수 있는 최소 정수값
+
+### 3) Math 객체
 - Math.round(): 반올림
 - Math.ceil(): 올림
 - Math.floor(): 내림 `-1.1 ➩ -2`
@@ -191,7 +233,6 @@ A > B일 때 slice(A, B)는 작동하지 않으나 substring(A, B)는 substring(
 - 병합 연산자(nullish): `??`, 차례대로 피연산자의 !nullish(!null && !undefined) 여부 판단
 - delete, typeof, instanceof, void 
 
-
 ## (6) 객체: 변수 선언 모음
 순서없는 '키 + 값'쌍 데이터(Property속성) 집합체 (배열, 함수, 기타)
 
@@ -208,9 +249,8 @@ obj['on' + 'e']; // string이니까 접합 가능!
 <!-- 
 - 객체에서 키가 number인 값에 접근할 수 있는 점 표기법은 없을까?(map 사용 말고) 만약 그렇다면 불편하더라도 괄호 표기법이 더 유용하다. 
 - 대괄호[] 안의 숫자는 string으로 자동 형변환 되는 것 같다. 그러니 인덱스를 음수로 찾으려고 해도 ["-1"] 따위를 찾을 수 없어서 음수 인덱스는 쓸 수 없는 것-->
-
-- 배열 안 배열일 때 `([], [])`<br>
-`let alphabet = (['a', 'b'], ['c', 'd'])`
+- 10.toString() 불가<br>
+ (10).toString(), 변수명.toString()은 가능
 
 - 객체 외부 데이터에 엑세스
 ```js

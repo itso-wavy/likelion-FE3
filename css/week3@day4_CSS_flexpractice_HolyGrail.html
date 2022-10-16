@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail-Flex</title>
+    <style>
+        
+        body {
+            display: flex;
+            flex-flow: wrap;
+        }
+
+        header,
+        main,
+        footer {
+            width: 100%;
+        }
+
+        header,
+        section,
+        aside,
+        footer {
+            border: 5px solid #466fa6;
+            padding: 80px;
+        }
+
+        header {
+            background-color: #96c9f2;
+        }
+
+        main {
+            display: flex;
+        }
+
+        section {
+            background-color: #485373;
+            flex-basis: 80%;
+        }
+
+        aside {
+            background-color: #c7f544;
+            flex-basis: 20%;
+        }
+
+        footer {
+            background-color: #ff7769;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>header</header>
+    <main>
+        <section>
+            section > article
+        </section>
+        <aside>aside</aside>
+    </main>
+    <footer>footer</footer>
+</body>
+
+</html>

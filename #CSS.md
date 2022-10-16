@@ -1,5 +1,19 @@
-# 2. CSS: Cascading Style Sheets(1) 
-: 우선순위에 따라 적용되는 스타일 언어
+<style>
+    h2 {
+        background-color: 	#00e83a;
+    }
+    h3 {
+        background-color: 	#60d0fb;
+    }
+    h4 {
+        background-color: gold;
+    }
+    strong, em {
+        text-decoration: underline red;
+    }
+</style>
+
+
 ```css
 Selector(선택자) { /* Declaration Block(선언블록) */
     Property(속성): Value(값);
@@ -229,7 +243,7 @@ input:focus {border: solid 5px red;}</style>
 3. **align-items**(**교차축** 기준 배분, 정렬): stretch(초기값)/*center*/flex-start/flex-end<br>
 align-content(+wrap): 교차축에 아이템이 여러 줄일 때 사용
 1. flex-wrap(줄 넘김): wrap/nowrap/wrap-reverse
-2. flex-flow(축약형): wrap column <!-- flex-wrap: wrap; flex-direction: colum -->
+2. flex-flow(축약형): wrap direction <!-- flex-wrap: wrap; flex-direction: column -->
 
 ### 2) flex-item에 사용하는 속성
 * flex(속기법): basis, grow, shrink
@@ -238,6 +252,10 @@ align-content(+wrap): 교차축에 아이템이 여러 줄일 때 사용
 3. flex-shrink: 컨테이너 축소시 각각의 아이템에 크기 할당
 4. align-self: align-items 무시하고 개별 아이템에 align 속성 부여, 초기값 stretch
 5. order: 음수 포함, 작은 숫자부터 우선 순위 부여
+
+> CSS-flex를 시작하면 <br>
+> i. (flex-flow 조정) justify-content/align-item으로 정렬하고, 각 아이템에 basis/shrink/grow 부가하기 <br>
+> ii. (flex-flow 조정) margin 준 뒤 각 아이템에 basis/shrink/grow 으로 정렬하기
 
 
 ## (12) Grid: 레이아웃③
