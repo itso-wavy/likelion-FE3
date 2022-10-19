@@ -108,12 +108,12 @@ parseInt("10") + parseInt("10"); // 권장 -->
 ### 3) String Method
 <!-- TODO: 배열메서드와 교집합 확인 -->
 
-- **추가, 접합, 변형**: concat() / replace() / replaceAll() / repeat() / toUpperCase() / toLowerCase() / toString() / trim() / padStart() / padEnd()<br>
-- **자르기**: slice() ≒ substring() / split() ➩ 배열<br>
+- **추가, 접합, 변형**: concat / replace / replaceAll / repeat / toUpperCase / toLowerCase / toString / trim / padStart / padEnd<br>
+- **자르기**: slice ≒ substring / split ➩ 배열<br>
 slice는 자르기, substring는 부분문자열, split은 쪼개기<br>
 A > B일 때 slice(A, B)는 작동하지 않으나 substring(A, B)는 substring(B, A)로 변환해서 작동함
-- **대답하기**: indexof() ➩ 인덱스값, includes() / startsWith() / endsWith() ➩ 불리언
-> concat(), indexof(), includes()는 배열 메서드이다
+- **대답하기**: indexof ➩ 인덱스값, includes / startsWith / endsWith ➩ 불리언
+> concat, indexof, includes는 배열 메서드이다
 
 ### 5) 일시적 형변환(일시적 객체)
 
@@ -199,25 +199,43 @@ A > B일 때 slice(A, B)는 작동하지 않으나 substring(A, B)는 substring(
 객체의 키는 문자열로 저장된다.
 
 ### 2) 접근: key
-- 괄호 표기법은 접근 전 평가단계를 거친다. 
+- 괄호 표기법은 접근 전 평가단계를 거친다 
 ```js
 obj.2; // = error!
-obj['on' + 'e']; // string이니까 접합 가능! 
+data[3][one] // error 
+obj['on' + 'e']; // string이니까 접합 가능!
 ``` 
 <!-- 
 - 객체에서 키가 number인 값에 접근할 수 있는 점 표기법은 없을까?(map 사용 말고) 만약 그렇다면 불편하더라도 괄호 표기법이 더 유용하다. 
-- 대괄호[] 안의 데이터는 모두 string 취급되는 것 같다. 그러니 인덱스를 음수로 찾으려고 해도 ["-1"] 따위를 찾을 수 없어서 음수 인덱스는 쓸 수 없는 것-->
+- 대괄호[] 안의 숫자는 string으로 자동 형변환 되는 것 같다. 그러니 인덱스를 음수로 찾으려고 해도 ["-1"] 따위를 찾을 수 없어서 음수 인덱스는 쓸 수 없는 것-->
+
+- 배열 안 배열일 때 `([], [])`<br>
+`let alphabet = (['a', 'b'], ['c', 'd'])`
+
 - 객체 외부 데이터에 엑세스
 ```js
 const second = 2;
 obj.second; // = error!
 obj[second]; // = obj["2"] = "two"
 ```
+
+- Object spread 용법
+```js
+newuser["name"] = userUpdate["name"];
+newuser["email"] = userUpdate["email"];
+// = 
+newuser = { ...newuser, ...userUpdate };
+```
+
 ### 3) 수정(추가/삭제/변경)
 #### i. key
-#### ii. 각 객체의 내장함수 <!-- FIXME: -->
+#### ii. 객체의 내장함수
 <!-- 키 변경은 스트링으로 접근, 값 변경은 키로 접근하면 될 듯 -->
-
+```js
+Object.keys(obj);
+Object.values(obj);
+Object.entries(obj);
+```
 ### 4) Nested objects중첩 객체
 객체 속 객체, 객체 속 배열(일부 데이터에만 순서를 주고 싶을 때)
 
@@ -225,6 +243,7 @@ obj[second]; // = obj["2"] = "two"
 ## (7) Sparse Arrays배열
 - index순서 + length길이 + element요소 
 - 해시를 통해 스택과 힙에 저장
+<!-- - `console.log([1, 2, 3, 4][5]) // = undefined undefined` -->
 
 ### 1) 생성: `[]`, `Array()`, `Array.from()`, `Array.of()`
 `typeof array // = object`
@@ -241,22 +260,20 @@ Array.of(1) // = [1] ⇔ Array(1) // [empty]
 #### i. index 
 #### ii. ARRAY METHODS배열내장함수
 
-- **생성
-- **추가, 제거(stack, queue)**: push() / pop() / unshift() / shift()
-- **접합, 변형, 정렬**: concat() / slice() / splice() / fill() / flat() / reverse() ⇔ sort()
-- **대답하기**: indexOf() / includes()
+- **추가, 제거(stack, queue)**: push / pop / unshift / shift
+- **접합, 변형, 정렬**: concat / join (⇔ split) / slice / splice / fill / flat / reverse ⇔ sort / toString ➩ 스트링 
+- **대답하기**: indexOf / includes / Array.isArray
 <!-- indexOf: 인수와 처음 일치하는 인덱스를 반환
 sort: 요소 첫째자리 기준으로 정렬 -->
-- 비순수함수: fill(), splice(), reverse() / push, pop, unshift, shift()
-- 고차함수 ⊂ (순수함수=비파괴메서드): 인자로 함수를 받음<br>
-reverse, sort() / map, filter, find() / fill, reduce()
-<!-- map은 뽑아내고 filter는 걸러내고 find 처음일치값 찾아냄 -->
+
 <!-- FIXME: -->
-* filter()
-* forEach()
-* some()
-* join() / toString() ➩ 스트링 
-<!-- join 배열에서 스트링으로 ⇔ split 스트링에서 배열로 -->
+- (순수함수=비파괴메서드) ⊃ <span style="color: palevioletred">**고차함수**</span> : 인자로 함수를 받음<br>
+<span style="color: palevioletred">forEach(단순실행, 콜백), **reduce**(콜백) / map(콜백) / filter / find / findIndex / fill(,?,?) / sort(?) / includes, some, every ➩  불리언 </span>
+<!-- map은 약도를 그리고 filter는 체에 치고(여과) find 첫일치값 찾아냄 
+* map: 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환, 기존 배열 길이와 새롭게 만들어진 배열의 길이는 동일하다.
+* reduce: 누적값과 현재값으로 하나의 값을 반환, 배열일수도 객체일수도 있다.
+-->
+- 비순수함수: splice, reverse, fill / push, pop, unshift, shift
 > static function: 인자를 필요로 하지 않는 함수
 
 ### 4) Nested arrays중첩 배열: 배열 속 배열, 배열 속 객체
