@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table {
+      border: 2px solid black;
+      border-collapse: collapse;
+      font-family: serif;
+      text-align: center;
+      margin: 10px;
+    }
+    th,
+    td {
+      border: 1px solid black;
+      padding: 5px 10px;
+    }
+    caption {
+      caption-side: bottom;
+      margin: 10px;
+      text-decoration: #949bff dashed underline;
+      font-size: 1.3em;
+    }
+    .grade {
+      background-color: #d7d9f2;
+    }
+  </style>
+  <title>Semantic Table Markup Practice</title>
+</head>
+
+<body>
+  <table>
+    <caption>Specification values</caption>
+    <colgroup>
+      <col class="grade">
+      <col>
+      <col span="2">
+      <col>
+    </colgroup>
+    <tr>
+      <th rowspan="2" scope="col" id="grade">Grade.</th>
+      <th rowspan="2" scope="col">Point.</th>
+      <th colspan="2" scope="col">Strength.</th>
+      <th rowspan="2" scope="col">Percent.</th>
+    </tr>
+    <tr>
+      <th>kg/mm</th>
+      <th>lb/in</th>
+    </tr>
+    <tr>
+      <td scope="row" headers="grade">Hard</td>
+      <td>0.45</td>
+      <td>56.2</td>
+      <td>80,000</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td scope="row" headers="grade">Medium</td>
+      <td>0.45</td>
+      <td>49.2</td>
+      <td>70,000</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td scope="row" headers="grade">Soft</td>
+      <td>0.45</td>
+      <td>42.2</td>
+      <td>60,000</td>
+      <td>30</td>
+    </tr>
+  </table>
+</body>
+
+</html>
