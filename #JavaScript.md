@@ -27,17 +27,20 @@
 ### 2) 실행
 - 문서 내 어디에도 `<script>` 태그 삽입 가능
 - 외부 스크립트/내부 스크립트/인라인
+- 엄격모드(strict mode): 문서의 최상단에 적용, 취소는 불가
 
-### 3) 콘솔 메서드
-- console.`log/warn/error/info/time/dir()`, `alert/prompt()`
-   1. console.log(): 출력
-   1. console.warn(): 경고
-   1. console.error(): 에러
-   1. console.dir(): 객체의 데이터
+### 3) 기본 메서드
+- 브라우저 상호 작용 메서드: `alert/prompt/confirm()`
 
 > ex. let userInput =  prompt("") ➩ 입력값 얻기 ➩ parseInt(userInput) ➩ 출력값 얻기<br>
 >> cf. prompt 입력값은 (빈칸, 숫자, 문자, ...)무조건 string 취급<br>
 >> cf. parseInt()는 인자의 앞에 붙은 정수값을 파싱(분석)하여 숫자 데이터로 변환해줌
+
+- 콘솔 메서드: console.`log/warn/error/info/time/dir()`
+   1. console.log(): 출력
+   1. console.warn(): 경고
+   1. console.error(): 에러
+   1. console.dir(): 객체의 데이터
 
 - console.`table()`, `group()`, `groupEnd()`
   
@@ -83,6 +86,7 @@ JS가 알고 있는 데이터, ㄱㄴㄷ
 - undefined
 - NaN
 ```
+> 0은 false로 defined 된 값
 4. undefined: 정의되지 않음 💬 = ⬜
 5. null: 값이 없음을 정의 💬 = ⬛(typeof object)
 6. symbol
@@ -99,30 +103,29 @@ JS가 알고 있는 데이터, ㄱㄴㄷ
  1. Object객체: object/array/map/set
  2. 함수<!-- FIXME: -->
 
-### 3) 타입 변환(형변환)
-<!-- FIXME: -->
+### 3) 타입 변환(형변환) <!-- FIXME: -->
 - 명시적 타입 변환
 - 암묵적 타입 변환
 
-<!-- Number("10") + Number("10"); // 비권장
-parseInt("10") + parseInt("10"); // 권장 -->
+> Number, string 비권장 ➩ parseInt, toString
 
 
 ## (2) 변수와 상수
 값을 저장하고 유지하여 코드의 반복 작성을 줄여줌
 
-### 1) 선언(≒정의) <!-- TODO: -->
-- 항상 const: 상수
-- 가끔 let: 블록 스코프 변수
+### 1) 선언(≒정의)
+- 항상 const: 블록 스코프 상수, 재선언시 에러
+- 가끔 let: 블록 스코프 변수, 재선언시 에러
 - 절대 var: 함수 스코프 변수
-> const, let으로 재선언시 error, 그러나 콘솔에서만 에러가 나지 않을 수 있음
-> 블록 스코프 선언 키워드를 사용시, 함수/블록 밖에서 선언해야 함
+> const, let으로 재선언시 error, 그러나 콘솔에서만 에러가 나지 않을 수 있음<br>
+> 블록 스코프 선언 키워드를 사용시, 실행 후 없어지지 않도록 함수/블록 밖에서 선언해야 함
  
 ### 2) 변수 명명과 규칙
 1. 가능: 한글 식별자, 문자 대소문자 구별, 특수문자($_) 시작, 유니코드언어<br>
 불가능: 숫자 시작, 예약어(let, const, var, if, else), 띄어쓰기
     > let _ = 100; // 반복문 돌 때 의미없는 변수에 사용<br>
-    > $_(달러함수)는 보통 DOM 탐색, 또는 함수명에 사용
+    > $_(달러함수)는 보통 DOM 탐색, 또는 함수명에 사용<br>
+    > 호준님은 깃헙에서 엑셀 함수명 외워두고 쓰셨다고 
 
 1. 주로 첫 글자를 소문자로 하는 카멜 케이스 이용(⇔ 스네이크 케이스)
 1. 변수 이름은 길고 구체적일 것, 불리언 변수에는 앞에 is를 붙이면 더 분명해짐
@@ -139,16 +142,23 @@ parseInt("10") + parseInt("10"); // 권장 -->
 - 객체지만 안에서는 primitive type
 
 ### 3) String Method
-<!-- TODO: 배열메서드와 교집합 확인 -->
 
 1. **추가, 접합, 변형**: concat / replace / replaceAll / repeat / toUpperCase / toLowerCase / toString / trim / padStart / padEnd<br>
 1. **자르기**: slice ≒ substring / split ➩ 배열<br>
 slice는 자르기, substring는 부분문자열, split은 쪼개기<br>
 A > B일 때 slice(A, B)는 작동하지 않으나 substring(A, B)는 substring(B, A)로 변환해서 작동함
+> substr() 비권고 ➩ substring
 1. **대답하기**: indexof ➩ 인덱스값, includes / startsWith / endsWith ➩ 불리언
 > concat, indexof, includes는 문자열과 어레이에 모두 존재하는 메서드
 
-### 5) 일시적 형변환(일시적 객체)
+### 4) 템플릿 리터럴
+- 백틱 안에서 달러변수 앞 뒤로 파싱함
+- 템플릿 리터럴 내에서의 연산 비권장
+
+### 5) 일시적 형변환(일시적 객체) <!-- TODO: -->
+- 함수와 메서드 사용에 관대하다.
+- 유니코드순으로 비교하고 마지막에 길이가 긴 것이 true가 됨
+- `'2' > 1`, `'01' == 1`
 
 ### 6) 정규표현식
 <!-- FIXME: -->
@@ -193,45 +203,60 @@ A > B일 때 slice(A, B)는 작동하지 않으나 substring(A, B)는 substring(
  `Math.floor(Math.random() * 선택지개수) + N`
 - Math.pow(x, y): x의 y 제곱
 - Math.PI: 3.141592653589793
-- Math.sqrt(): 양의 제곱근
+- Math.sqrt(): 양의 제곱근 (`= x ** 0.5`)
 - Math.max / Math.min(): 최대 최솟값
 
 
 ## (5) 연산자
 ### 1) 기본 연산자
- - `+`, `-`, `*`, `/`
- - `**`(지수 연산자), `%`(modular)
- - `++`, `--`
- - `+=`, `-=` 
- - 템플릿 리터럴 내에서의 연산 비권장
-
+ - 산술 연산자: `+`, `-`, `*`, `/`, `**`(지수 연산자), `%`(modular), `++`, `--`
+  
+ - 할당 연산자: `=`, `+=`, `-=`
 
 ### 2) 비교 연산자
- - `>`, `<`, `>=`, `<=`  boolean value
+- `>`, `<`, `>=`, `<=`  boolean value
 
- - `==` 이중 등호: 메모리에 담긴 값을 비교, 양쪽을 같은 타입으로 변환함<br>
+- `==` 이중 등호: 메모리에 담긴 값을 비교, 양쪽을 같은 타입으로 변환함<br>
    `===` 삼중 등호: 메모리에 담긴 값 + 데이터 타입 비교
+- `null == undefined`, `null === undefined`
+
 
 ### 3) 논리 연산자 ( 계산 우선순위: and ➩ or )
- - and: && 
+ - and: `&&` 
    - true && true = true;
    - true && false = false;
    - false && true = false;
    - false && false = false;
 
- - or: ||
+ - or: `||`
    - true || true = true; (xor: false)
    - true || false = true;
    - false || true = true;
    - false || false = false;
 
- - not: !
+- 암기코드
+```js
+for (let i = 0; i < 30; i++) {
+    if (i % 3 == 0 || i % 5 == 0) {
+        console.log(i)
+    }
+}
+``` 
+ - not: `!`
 > cf. 단축평가: 평가식을 평가하는 중 결과가 확정된 경우 나머지 평가 과정을 생략하는 것
 
 ### 4) 기타 연산자
+- `!!`( ➩ 불리언)
+- 비트 연산자: `&`(and), `|`(or), `^`(xor), `~`(not), `~~`(Math.floor), `<<`(left shift)
 - 삼항 연산자(ternary operator): `CDT ? TURE : FALSE`, 중첩은 3번까지만 권장
 - 병합 연산자(nullish): `??`, 차례대로 피연산자의 !nullish(!null && !undefined) 여부 판단
-- delete, typeof, instanceof, void 
+- delete(비권장), typeof, instanceof, void 
+- 
+
+### 5) 우선순위 / 연산자 체이닝
+- 연산자 우선순위: 헷갈리면 괄호를 사용
+- 연산자 체이닝: a = b = c = 2 + 2 비권장
+  
 
 ## (6) 객체: 변수 선언 모음
 순서없는 '키 + 값'쌍 데이터(Property속성) 집합체 (배열, 함수, 기타)
@@ -250,7 +275,7 @@ obj['on' + 'e']; // string이니까 접합 가능!
 - 객체에서 키가 number인 값에 접근할 수 있는 점 표기법은 없을까?(map 사용 말고) 만약 그렇다면 불편하더라도 괄호 표기법이 더 유용하다. 
 - 대괄호[] 안의 숫자는 string으로 자동 형변환 되는 것 같다. 그러니 인덱스를 음수로 찾으려고 해도 ["-1"] 따위를 찾을 수 없어서 음수 인덱스는 쓸 수 없는 것-->
 - 10.toString() 불가<br>
- (10).toString(), 변수명.toString()은 가능
+ (10).toString(), 변수명.toString()은 가능 
 
 - 객체 외부 데이터에 엑세스
 ```js
@@ -283,7 +308,7 @@ Object.entries(obj);
 ## (7) Sparse Arrays배열
 - index순서 + length길이 + element요소 
 - 해시를 통해 스택과 힙에 저장
-<!-- - `console.log([1, 2, 3, 4][5]) // = undefined undefined` -->
+<!-- `console.log([1, 2, 3, 4][5]) // = undefined undefined` -->
 
 ### 1) 생성: `[]`, `Array()`, `Array.from()`, `Array.of()`
 `typeof array // = object`
@@ -319,7 +344,14 @@ sort: 요소 첫째자리 기준으로 정렬 -->
 ### 4) Nested arrays중첩 배열: 배열 속 배열, 배열 속 객체
 
 
-## (8) 조건문
+## (8) state문
+```js
+// 선언키워드 + 표현식
+const 식별자 = 1(숫자리터럴)
+```
+좌항이 호이스팅 됨
+
+## (9) 조건문
 ### 1) if 조건문
 조건(cdt)의 범위는 좁은 곳에서 넓은 곳으로 
 ```js
@@ -333,6 +365,7 @@ if (cdt1) {
 ```
 
 ### 2) switch 조건문
+데이터 타입 확인 중요
 ```js
 const arg = opt;
 switch (arg) {
@@ -341,17 +374,72 @@ switch (arg) {
     case opt2:  // arg === opt2이면 실행
         break;
     default:    // arg !== (opt1 && opt2)이면 실행, default 위치는 어디든 가능
-    // 마지막 항목은 break 생략
+    // default와 상관없이 마지막 항목은 break 생략
 }
 ```
 
 ### 3) 조건부 네스팅(Nesting): 조건문 속 조건문
 
 
-## (9) Loop반복문
+## (10) Loop반복문
+- break: 해당 반복문 탈출
+- continue: 해당 단계 건너뜀
 ### 1) for (let) 루프
-
 ### 2) while 루프
 
+```js
+while (true) {
+    console.log(value)
+    value = prompt('명령을 입력하세요.')
+    if (value === 'break') {
+        break
+    }
+}
+```
 
+## (11) 함수 == ()
+이상적인 함수란 작고 귀엽고 친절한 함수(한가지 일만 하며 주석이 필요없는 형태)
+<!-- TODO: -->
+### 1) 정의
+#### i. 목적
+- 재사용성 
+- 유지보수 = 변수의 스코프 제한
+- 구조 파악 용이 = 읽기 쉬움
+#### ii. 형태
+- *정의*(⇔변수는 선언) ➩ *호출*(=실행, 콜)
+- parameter(=param, 인자): 인수 전달이 안 되면 undefined를 기본값으로 가짐, 배열로 저장됨, 인수 개수 이상이면 객체로 넣는 게 좋음
+```js
+정의
+    /* 
+    선언 키워드 + 식별자 = function 함수명 (인자) {
+        반환값
+    }
+    */
+    const f = function name (param) { 
+        return // 반환값
+    }
+호출
+    /*
+    함수명(인수)
+    */
+    name(argument) 
+```
 
+- 인풋 ➩ 실행 ➩ 아웃풋
+  
+### 2) 정의 방식
+
+#### i. 선언문
+#### ii. 표현식
+#### iii. 화살표 함수
+#### iv. 생성자 함수
+#### v. 선언문과 표현식의 차이
+
+### 3) 재귀함수
+### 4) 중첩함수
+### 5) 콜백함수
+
+Scope스코프
+This
+Try/Catch
+DOM

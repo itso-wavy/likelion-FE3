@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail-Flex</title>
+    <style>
+        body {
+            display: grid;
+            grid-template: 50px repeat(3, 5) / 1fr 1fr 1fr 5fr 1fr;
+            grid-template-areas: 
+            ".      .      .      time"
+            "header header header header"
+            "section section section aside"
+            "footer footer footer footer";
+        }
+
+        header,
+        main,
+        footer {
+            height: 300px;
+        }
+
+        header,
+        section,
+        aside,
+        footer {
+            border: 5px solid #466fa6;
+        }
+
+        header {
+            background-color: #96c9f2; /* pink */
+            grid-area: header;
+        }
+
+        section {
+            background-color: #485373; /* royalblue */
+            grid-area: section;
+        }
+
+        aside {
+            background-color: #c7f544; /* lightgreen */
+            grid-area: aside;
+        }
+
+        footer {
+            background-color: #ff7769; /* aquamarine */
+            grid-area: footer;
+        }
+
+        p {
+            background-color: blueviolet;
+            grid-area: time;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <p>현재시간: <time>22-09-19</time></p>
+    <header>header</header>
+    <main>
+        <section>
+            section > article
+        </section>
+        <aside>aside</aside>
+    </main>
+    <footer>footer</footer>
+</body>
+
+</html>
