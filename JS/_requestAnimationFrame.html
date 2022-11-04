@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    div {
+      background: palevioletred;
+      width: 100px;
+      height: 100px;
+      /* transition: .3s */
+    }
+  </style>
+  <title>requestAnimationFrame</title>
+</head>
+<body>
+  <div></div>
+  <script>
+    const $target = document.querySelector('div');
+    let pos = 0
+    // document.addEventListener('keydown', move)
+
+    // function move(e) {
+    //   if (e.key === 'ArrowLeft') {
+    //     pos -= 10
+    //     $target.style.transform = `translateX(${pos}px)`
+    //   }
+    //   else if (e.key === 'ArrowRight') {
+    //     pos += 10
+    //     $target.style.transform = `translateX(${pos}px)`
+    //   }
+    // }
+    let keys = {}
+
+    function move(e) {
+      keys[e.key] = true;
+    } // ArrowLeft: true;
+    function stop(e) {
+      keys[e.key] = false;
+    } // ArrowLeft: false;
+
+    document.addEventListener('keydown', move);
+    document.addEventListener('keyup', stop);
+
+    function play() {
+      if (keys.ArrowRight) {
+        pos += 10;
+        $target.style.transform = `translateX(${pos}px)`;
+      }
+      if (keys.ArrowLeft) {
+        pos -= 10;
+        $target.style.transform = `translateX(${pos}px)`;
+      }
+      window.requestAnimationFrame(play);
+    }
+    window.requestAnimationFrame(play);
+  </script>
+</body>
+</html>
