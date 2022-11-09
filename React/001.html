@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>리액트 1분만에 추가해보기!</title>
+    </head>
+    <body>
+
+        <!-- 리액트가 뭐지, 왜 쓰지? -->
+
+        리액트: 컴포넌트를 쉽게 생성할 수 해주는 라이브러리
+        - 페이지 구성 요소를 컴포넌트화 하기 위해
+        - 복잡도를 줄여 더 효율적인 관리와 유지보수가 가능하게 해줍니다. 또 일정 규모 이상에서 속도를 향상시킬 수 있습니다.
+
+
+        <!-- 어떻게 쓰지? 기본 문법 -->
+        함수로 만든 컴포넌트를 태그로 사용한다! 
+        작스문법으로 된 const~~를 리턴해서 html에 쏴준다. reactDOM 객체를 통해
+
+        현업의 트렌드 함수형 컴포넌트<-> 클래스 문법 X
+
+        - 함수로 선언된 컴포넌트는 태그처럼 꺽쇠(<)로 묶이고, 변수로 선언된 것들은 중괄호({})로 묶입니다
+
+        <div id="root"></div>
+        <script
+            src="https://unpkg.com/react@17/umd/react.development.js"
+            crossorigin
+        ></script>
+        <script
+            src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+            crossorigin
+        ></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            function HelloButton(props) {
+                return (
+                    <button onClick={() => console.log("실행")}>Hello</button>
+                );
+            }
+
+            function Title() {
+                return <h1>내 html에 리액트 1분만에 추가해보기!</h1>;
+            }
+
+            function Contents() {
+                return <p>단 1분만에 설치없이 리액트를 추가할 수 있다구요?</p>;
+            }
+
+            const app = (
+                <div>
+                    <Title />
+                    <Contents />
+                    <Contents />
+                    <Contents />
+                    <Contents />
+                    <HelloButton />
+                    <HelloButton />
+                    <HelloButton />
+                    <HelloButton />
+                    <HelloButton />
+                    <HelloButton />
+                </div>
+            );
+
+            // DOM에 리액트 컴포넌트 랜더링하기
+            const domContainer = document.querySelector("#root");
+            ReactDOM.render(app, domContainer);
+        </script>
+    </body>
+</html>

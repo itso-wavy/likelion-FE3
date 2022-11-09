@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1>jQuery</h1>
+    <h2>$("필터")</h2>
+    <ul>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+    </ul>
+
+    <input class="red-mon">
+    <input class="yello-mon">
+    <input class="green-mon">
+    <input class="blue-man">
+
+    <h2>$("필터").next()</h2>
+    <div>
+        <label>
+            <input type="radio" name="newsletter" value="Hot Fuzz">
+            <span>name?</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="newsletter" value="Cold Fusion">
+            <span>value?</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="newsletter" value="Evil Plans">
+            <span>value?</span>
+        </label>
+    </div>
+
+    <h2>$("필터:contains()")</h2>
+    <p>hello hi</p>
+    <p>hello !!</p>
+    <p>hello world</p>
+    <p>hello</p>
+    <p>hello world</p>
+
+    <h2>$("필터").empty() / addEventListener()</h2>
+    <p>Hello, <span>Person</span> <em>and person</em>.</p>
+    <button>Call empty() on above paragraph</button>
+
+    <h2>$("필터").has("")</h2>
+    <ul>
+        <li>Does the UL contain an LI?</li>
+    </ul>
+    <ul>
+        hello world
+    </ul>
+
+    <code>
+    - eq - equal ( = )
+
+    - ne - not equal ( <> )
+
+    - lt - little ( < ), stands for the [less-than sign](http://en.wikipedia.org/wiki/Less-than_sign) - (없음) le -
+    little or equal ( <=), less-than or equals sign - gt - greater (> ), stands for the [greater-than
+    sign](http://en.wikipedia.org/wiki/Greater-than_sign)
+    - (없음) ge - greater or equal ( >= ), greater-than or equals sign
+    </code>
+
+    <script>
+        $("li").eq(3).css("color", "red"); // 인덱스 = 3
+        $("li:gt(6)").css("color", "orange"); // 인덱스 > 6
+        // $("li:nth-child(2n)").css("color", "yellow");
+        // $("li:nth-child(3n)").css("color", "green");
+        // $("li:first").css("color", "blue");
+        // $("li:last").css("color", "violet");
+        // $("li:even").css("color", "grey");
+        // $("li:odd").css("color", "black");
+
+        $("input[class*='mon']").val("has man in it!"); // input의 value
+
+        $("input[value='Hot Fuzz']").next().text("Hot Fuzz"); // .next()메서드
+
+        $("p:contains(world)").css("color", "red"); // p:contains() 필터
+
+        $("button").click(function () {
+            $("p").empty();
+        }); // addEventListener()
+        //     $("p").hide();
+        // $("#test").show();
+        // $(".test").click(function(){
+        //     alert("클릭!");
+        // });
+        // $(".test").click(function(){
+        //     $(this).css('color', 'red');
+        // });
+        // $('.test').text('hello world');
+        // $('#test').html('<b>hello</b> world');
+        // $('#test').css('color', 'red');
+        // $('img').attr('src', 'a.jpg');
+        // $('.one .two').text('hello world');
+        // $('p#two').text('hello world');
+
+        $("ul").has("li").addClass("full"); // has() 탐색 메서드
+    </script>
+</body>
+
+</html>

@@ -250,18 +250,16 @@ for (let i = 0; i < 30; i++) {
 - 비트 연산자: `&`(and), `|`(or), `^`(xor), `~`(not), `~~`(Math.floor), `<<`(left shift)
 - 삼항 연산자(ternary operator): `CDT ? TURE : FALSE`, 중첩은 3번까지만 권장
 - 병합 연산자(nullish): `??`, 차례대로 피연산자의 !nullish(!null && !undefined) 여부 판단
-- delete(비권장), typeof, instanceof, void 
-- 
+- delete(비권장 ➩ = null 권장), typeof, instanceof, void 
 
 ### 5) 우선순위 / 연산자 체이닝
 - 연산자 우선순위: 헷갈리면 괄호를 사용
 - 연산자 체이닝: a = b = c = 2 + 2 비권장
-  
 
 ## (6) 객체: 변수 선언 모음
 순서없는 '키 + 값'쌍 데이터(Property속성) 집합체 (배열, 함수, 기타)
 
-### 1) 생성: `{}`, `Object()`
+### 1) 생성: `{}`, `new Object()`
 객체의 키는 문자열로 저장된다.
 
 ### 2) 접근: key
@@ -377,14 +375,34 @@ switch (arg) {
     // default와 상관없이 마지막 항목은 break 생략
 }
 ```
-
 ### 3) 조건부 네스팅(Nesting): 조건문 속 조건문
 
 
 ## (10) Loop반복문
+- 무한반복 주의
 - break: 해당 반복문 탈출
 - continue: 해당 단계 건너뜀
 ### 1) for (let) 루프
+#### 1)for...of: 배열 반복
+#### 2)for...in: 객체 반복
+
+
+```js
+// 암기코드
+// 1. 구구단
+for (let X = 2; X < 10; X++) {
+    for (let Y = 1; Y < 10; Y++) {
+        console.log(`${X} X ${Y} = ${X * Y}`);
+    }
+}
+```
+
+> 평균구하기
+> 1. for 문에 초기값 설정해서 하나씩 더하기
+> 2. forEach 메서드
+> 3. reduce 메서드
+
+
 ### 2) while 루프
 
 ```js
@@ -439,7 +457,131 @@ while (true) {
 ### 4) 중첩함수
 ### 5) 콜백함수
 
-Scope스코프
+
+Scope스코프 (스코프 체이닝, 지역 변수는 함수 실행이 끝난 후 없어진다. )
 This
 Try/Catch
 DOM
+테스트 자동화는 재현님과
+폴리필
+바벨: 모던JS 코드를 구표준을 준수하는 코드로 바꿔주는 트랜스파일러, 폴리필을 포함함
+
+
+## (12) Date 객체
+<!-- Date 객체
+그리니치 평균시: GMT +09:00
+
+getFullYear()
+getYear()
+getMonth()
+getDate()
+getDay()
+
+getHours()
+getMinutes()
+getSeconds()
+
+UTC //협정 세계시, GMT는 그리니치 평균시
+console.log(time.getUTCFullYear())
+console.log(time.getUTCMonth())
+console.log(time.getUTCDate()) // 현재시간을 영국시로 표현한다. = 9시간 전
+console.log(time.getUTCDay())
+
+
+2022-1970 
+
+24시간을 12시간 체제로 바꾸기
+const hour = time.getHours() > 12 ? time.getHours() - 12: time.getHours() 
+
+const 오전오후 = time.getHours() > 12 ? '오후' : '오전'  
+const minutes = time.getMinutes() > 10 ? time.getMinutes() : '0' + time.getMinutes();
+
+const now = `지금은 ${오전오후} ${hour}시 ${minutes} 분입니다.`
+console.log(now) -->
+
+
+
+```let date = new Date()```
+### 1) 날짜
+```js
+date.getFullYear() // 년
+date.getMonth() // 월, 0부터 시작, 실제의 -1
+date.getDate() // 일
+date.getDay() // 요일, 1은 월요일, 0은 일요일!
+```
+### 2) 시간
+```js
+date.getHours() // 시
+date.getMinutes() //분
+date.getSeconds() //초
+```
+### 3) 날짜 시간 지정
+```js
+new Date(2023, 0, 21, 10) // 2023년 1월 21일 10시
+new Date('2023/1/20/10:00:00') // = (2월이 아님)
+```
+```
+today = new Date() 
+// UTC - KST(지정 로캘) = -9시간
+today.getTimezoneOffset() // 60
+
+today.toString();     // -> Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)
+today.toTimeString(); // -> 12:30:00 GMT+0900 (대한민국 표준시)
+
+today = new Date('2023/1/20/10:00:00')
+today.toString();
+today.toISOString();
+today.toISOString().slice(0, 10);
+today.toISOString().slice(0, 10).replace(/-/g, '')
+
+//http://www.w3bai.com/ko/tags/ref_language_codes.html#gsc.tab=0
+//http://www.w3bai.com/ko/tags/ref_country_codes.html#gsc.tab=0
+today.toLocaleString('ko-KR'); // -> 2020. 7. 24. 오후 12:30:00
+today.toLocaleString('en-US'); // -> 7/24/2020, 12:30:00 PM
+today.toLocaleString('ja-JP'); // -> 2020/7/24 12:30:00
+
+
+const dayNames = [
+  '(일요일)',
+  '(월요일)',
+  '(화요일)',
+  '(수요일)',
+  '(목요일)',
+  '(금요일)',
+  '(토요일)'
+];
+// getDay 메서드는 해당 요일(0 ~ 6)을 나타내는 정수를 반환한다.
+const day = dayNames[today.getDay()];
+
+const year = today.getFullYear();
+const month = today.getMonth() + 1;
+const date = today.getDate();
+let hour = today.getHours();
+let minute = today.getMinutes();
+let second = today.getSeconds();
+const ampm = hour >= 12 ? 'PM' : 'AM';
+```
+
+
+SPA
+자원을 아낄 수 있고, 깜빡임 같은 늘어짐이 없고 재활용성을 높일 수 있다.
+
+개발 복잡도가 높고 검색엔진에서 검색 안 될 수 있음
+
+
+```js
+fetch('https://codingapple1.github.it/price.json')
+    .then((response.ok) => {
+        if(!response.ok) {
+            throw new Error ('400 아니면 500 에러남')
+        }
+        return response.json()
+    })
+    .then((결과) => {
+        console.log(결과)
+    })
+    .catch(() => {
+        console.log('에러남')
+    })
+    
+```
