@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+</head>
+
+<body>
+  <form action="">
+    <label for="txt">숫자 입력 : </label>
+    <input class="one" type="text" id="txt" required pattern="[0-9]">
+    <button>제출</button>
+  </form>
+
+  <form>
+    <label for="txt">입력 : </label>
+    <input class="two" type="email" id="txt">
+    <button>제출</button>
+  </form>
+
+  <form action="">
+    <label for="txt">입력 : </label>
+    <input class="three" type="email" id="txt" required>
+
+    <label for="txt2">입력 : </label>
+    <input class="three" type="url" id="txt2" required>
+    <button class="three-btn">제출</button>
+  </form>
+
+  <script>
+    const one = document.querySelector('.one');
+    one.addEventListener('input', () => {
+      console.log(one.validity);
+    })
+
+    const two = document.querySelector('.two');
+    two.addEventListener('input', () => {
+      if (two.validity.typeMismatch) {
+        two.setCustomValidity('알맞은 양식의 이메일 주소를 입력하세요');
+      } else {
+        two.setCustomValidity('');
+      }
+    })
+
+    const three = document.querySelectorAll('.three');
+    const threeBtn = document.querySelector('.three-btn');
+    // three.addEventListener('input', () => {
+    //     if (three.validity.typeMismatch) {
+    //         three.setCustomValidity('알맞은 양식의 이메일 주소를 입력하세요');
+    //     } else {
+    //         three.setCustomValidity('');
+    //     }
+    // })
+
+    threeBtn.addEventListener('click', (event) => {
+      three.forEach((item) => {
+        validate(item);
+      })
+    })
+
+    function validate(target) {
+      if (target.validity.valueMissing) {
+        target.setCustomValidity('아무 것도 입력되지 않았습니다.');
+      } else if (target.validity.typeMismatch) {
+        target.setCustomValidity('입력 값의 타입이 잘못되었습니다.');
+      } else {
+        target.setCustomValidity('');
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
