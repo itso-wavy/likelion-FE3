@@ -584,4 +584,17 @@ fetch('https://codingapple1.github.it/price.json')
         console.log('에러남')
     })
     
-```
+``
+
+# HTTP 요청
+
+참고) HTTP 응답 상태 코드
+200번대: 성공응답
+400번대: 클라이언트 에러 응답
+500번대: 서버 에러 응답
+
+참고) HTTP 메서드: 서버에서 데이터를...
+GET: 가져옴
+POST: 게시함
+PUT / PATCH: 전체 / 일부 수정함
+DELETE: 삭제함

@@ -1,27 +1,13 @@
-### Windows ###
-# Windows thumbnail cache files
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
-
-# Dump file
-*.stackdump
-
-# Folder config file
-[Dd]esktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
 @주차_WeeklyILearned.md
+
+WIL/
+HTML/
+jQuery/
+React/
+Node/
+Linux/
+
+JS/LionsNovTest
+JS/Serengeti_Test
+JS/json-server_practicing
+JS/Vending_Machine
