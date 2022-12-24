@@ -156,6 +156,8 @@ body {
   height: 57px;
   text-align: center;
   box-sizing: border-box;
+  text-align: center;
+  border: none;
 }
 
 #inp-field::placeholder,
@@ -171,7 +173,7 @@ body {
 }
 
 #btn-cal {
-  margin-top: 115px;
+  margin: 115px 0;
 }
 
 #btn-cal::after {
@@ -188,11 +190,9 @@ body {
 
 /* 결과 로딩 화면 */
 .cont-result-loading {
-  margin: 115px;
-  display: flex;
-  justify-content: center;
-  /* FIXME: */
+  margin-bottom: 115px;
   display: none;
+  justify-content: center;
 }
 
 .img-rotate {
@@ -203,12 +203,14 @@ body {
 
 /* 결과 확인 화면 */
 .cont-result {
-  margin-top: 147px;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
-  /* FIXME: */
-  /* display: none; */
+}
+
+.txt-wannabe,
+.txt-time {
+  width: 100%;
 }
 
 #result-field,
@@ -257,11 +259,9 @@ small {
   left: (100% - 50%/2);
   height: 100vh;
   overflow: hidden;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  /* FIXME: */
-  display: none;
 }
 
 #modal article {
