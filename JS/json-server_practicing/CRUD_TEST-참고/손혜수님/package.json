@@ -1,0 +1,23 @@
+{
+    "name": "store-crud",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "json-server --watch db.json --port 3001"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sduu/store-CRUD.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sduu/store-CRUD/issues"
+    },
+    "homepage": "https://github.com/sduu/store-CRUD#readme",
+    "dependencies": {
+        "json-server": "^0.17.1"
+    }
+}

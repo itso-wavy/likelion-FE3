@@ -1,6 +1,40 @@
 {
   "product": [
     {
+      "id": 1,
+      "productName": "버그를 Java라 버그잡는 개리씨 키링 개발자키링 금속키링",
+      "price": 12500,
+      "stockCount": 100,
+      "thumbnailImg": "asset/img/1/thumbnailImg.jpg",
+      "option": [],
+      "discountRate": 0,
+      "shippingFee": 1500,
+      "detailInfoImage": [
+        "asset/detail/2/detail1.png",
+        "asset/detail/2/detail2.png"
+      ],
+      "viewCount": 0,
+      "pubDate": "2022-02-28",
+      "modDate": "2022-02-28"
+    },
+    {
+      "id": 2,
+      "productName": "우당탕탕 라이캣의 실험실 스티커 팩",
+      "price": 3500,
+      "stockCount": 1000,
+      "thumbnailImg": "asset/img/2/thumbnailImg.jpg",
+      "option": [],
+      "discountRate": 0,
+      "shippingFee": 1500,
+      "detailInfoImage": [
+        "asset/detail/2/detail1.png",
+        "asset/detail/2/detail2.png"
+      ],
+      "viewCount": 0,
+      "pubDate": "2022-02-28",
+      "modDate": "2022-02-28"
+    },
+    {
       "id": 3,
       "productName": "딥러닝 개발자 무릎 담요",
       "price": 17500,
@@ -115,78 +149,6 @@
       "viewCount": 0,
       "pubDate": "2022-02-28",
       "modDate": "2022-02-28"
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "productName": "hello",
-      "price": "1000",
-      "stockCount": "10",
-      "viewCount": 0,
-      "pubDate": "2022-11-09",
-      "modDate": "2022-11-09",
-      "id": 14
-    },
-    {
-      "productName": "앙뇽",
-      "price": "4000",
-      "stockCount": "10",
-      "viewCount": 0,
-      "pubDate": "2022-11-09",
-      "modDate": "2022-11-09",
-      "id": 15
-    },
-    {
-      "productName": "앙뇽",
-      "price": "4000",
-      "stockCount": "10",
-      "viewCount": 0,
-      "pubDate": "2022-11-09",
-      "modDate": "2022-11-09",
-      "id": 16
-    },
-    {
-      "productName": "앙뇽",
-      "price": "4000",
-      "stockCount": "10",
-      "viewCount": 0,
-      "pubDate": "2022-11-09",
-      "modDate": "2022-11-09",
-      "id": 17
-    },
-    {
-      "productName": "모르겠네",
-      "price": "100000",
-      "stockCount": "10",
-      "viewCount": 0,
-      "pubDate": "2022-11-09",
-      "modDate": "2022-11-09",
-      "id": 18
-    },
-    {
-      "productName": "새상품",
-      "price": "100000",
-      "stockCount": "10",
-      "viewCount": 0,
-      "pubDate": "2022-11-09",
-      "modDate": "2022-11-09",
-      "id": 19
     }
   ]
 }

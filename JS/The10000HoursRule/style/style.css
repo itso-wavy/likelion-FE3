@@ -1,0 +1,274 @@
+@charset "utf-8";
+@import "reset.css";
+
+/* Fonts */
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+}
+
+/* Animation */
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Layouts */
+
+/* components */
+.ir {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(1 1 1 1);
+    clip-path: inset(50%);
+    z-index: -1;
+}
+
+#app {
+    background-color: #5B2386;
+    color: white;
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+    padding-bottom: 70px;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+/* 제목과 설명 */
+.tit-law {
+    display: inline-block;
+    position: relative;
+    margin-top: 120px;
+}
+     
+.tit-law .img-tit {
+    z-index: 10;
+}
+
+.tit-law::after { /* 가상요소 스타일 적용 */
+    content: '';
+    display: block; /* 인라인 속성에서 변경 해주기 */
+    width: 225px;
+    height: 225px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/title_bg.png');
+    background-position: center;
+}
+
+.img-txt {
+    max-width: 486px;
+    margin: 125px auto 78px;
+}
+
+.txt-desc {
+    font-size: 18px;
+    line-height: 35px;
+    position: relative;
+    max-width: 475px;
+    margin: 0 auto 100px;
+}
+
+.txt-desc .tit-desc {
+    font-weight: bold;
+}
+
+.txt-desc::before, .txt-desc::after {
+    content: '';
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    background-repeat: no-repeat;
+}
+
+.txt-desc::before {
+    left: 0;
+    top: 25%;
+    background-image: url('../img/txt-left.png');
+}
+
+.txt-desc::after {
+    right: 0;
+    bottom: 25%;
+    background-image: url('../img/txt-right.png');
+}
+
+/* 전문가와 훈련시간 입력폼 */
+.cont-inp {
+    margin: 0 auto 115px;
+}
+
+.cont-inp .txt-wannabe {
+    margin-bottom: 27px;
+}
+
+.cont-inp .txt-time {
+    margin-bottom: 115px;
+
+}
+
+.cont-inp .txt-wannabe input, .txt-time input {
+    width: 228px;
+    height: 57px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 7px;
+    font-family: 'GmarketSansMedium';
+    font-size: 24px;
+    text-align: center;
+}
+
+input::placeholder {
+    color: #BABCBE;
+}
+
+/* 버튼 공통 */
+.btn-exc, .btn-go, .btn-share, .btn-close {
+    padding: 21px 49px;
+    font-size: 24px;
+    font-family: 'GmarketSansBold';
+    line-height: 24px;
+    color: #5B2386;
+    background: #FCEE21;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 56px;
+    cursor: pointer; /* TODO: */
+}
+
+.cont-inp .btn-exc {
+    position: relative;
+    margin-bottom: 147px;
+}
+
+.cont-inp .btn-exc::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url('../img/hand.png');
+    width: 64px;
+    height: 72px;
+    bottom: -20px;
+    right: -70px;
+}
+
+/* 결과 로딩 화면 */
+.cont-result-loading {
+    display: none;
+}
+
+.img-rotate {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+} 
+
+/* 결과 확인 화면 */
+.cont-result {
+    /* display: none; */
+    margin-bottom: 130px;
+}
+
+.cont-result .txt-wannabe{
+    line-height: 90px;
+}
+
+.cont-result .field-result {
+    margin-bottom: 17px;
+}
+
+.cont-result .time-result {
+    margin-bottom: 127px; 
+    /* FIXME: */
+}
+
+.cont-result .txt-wannabe strong, .cont-result .txt-time strong {
+    font-size: 72px;
+    font-family: 'GmarketSansBold';
+    vertical-align: top;
+}
+
+.btn-share {
+    background: white;
+    margin: 120px 0 137px 18px;
+}
+
+/* 회사 및 저작권 정보 */
+.cont-footer {
+    font-family: 'Noto Sans KR';
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.cont-footer .img-footer {
+    width: 128px;
+    height: 25x;
+    margin: 0 auto 20px;
+}
+
+/* 모달 */
+#modal {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+#modal .modal-wrap {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    padding: 60px;
+}
+
+#modal .tit-modal {
+    width: 396px;
+}
+
+#modal .cont-modal {
+    width: 233px;
+    margin: 30px;
+}
+
+#modal .img-licat {
+    width: 70%;
+}
+
+#modal .btn-close {
+    margin: 40px auto 0;
+}

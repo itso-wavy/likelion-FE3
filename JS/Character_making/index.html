@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* animaion */
+
+        /* reset */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* design */
+
+        body {
+            height: 100vh;
+            background: url(bgi.png);
+            background-size: cover;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        .lierry {
+            position: relative;
+            width: 300px;
+            height: 350px;
+            top: 100px;
+            right: 60px;
+            margin: 150px auto;
+        }
+
+        .ear-left {
+            position: absolute;
+            top: -32px;
+            left: -210px;
+            width: 196px;
+            height: 316px;
+            background-color: #f5d975;
+            border: 5px solid #000;
+            border-radius: 26% 74% 63% 37% / 53% 37% 63% 47%;
+            transform: rotate(-11deg);
+            z-index: -1;
+        }
+
+        .ear-right {
+            position: absolute;
+            top: -32px;
+            left: 399px;
+            width: 152px;
+            height: 226px;
+            background-color: #f5d975;
+            border: 5px solid #000;
+            border-radius: 63% 37% 100% 0% / 40% 58% 42% 60%;
+            transform: rotate(-11deg);
+            z-index: -1;
+        }
+
+        .hair{
+            position: absolute;
+            width: 800px;
+            height: 700px;
+            top: -380px;
+            left: -205px;
+            margin: 200px auto;
+            clip-path: polygon(21% 23%, 25% 10%, 36% 14%, 39% 5%, 49% 14%, 58% 7%, 64% 13%, 75% 9%, 77% 18%, 86% 17%, 88% 27%, 96% 28%, 99% 36%, 95% 45%, 100% 54%, 94% 61%, 96% 70%, 87% 76%, 89% 89%, 74% 88%, 67% 96%, 58% 93%, 50% 99%, 43% 93%, 31% 95%, 29% 84%, 15% 91%, 20% 76%, 8% 75%, 12% 64%, 0 56%, 7% 45%, 3% 35%, 13% 31%, 11% 20%);
+            z-index: -1;
+        }
+
+        .face-top {
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            width: 294px;
+            height: 171px;
+            background-color: #f5d975;
+            border: 5px solid #000;
+            border-radius: 50% 50% 48% 52% / 67% 70% 30% 33%;
+            transform: rotate(-5.55deg);
+        }
+        
+        .feature {
+            position: absolute;
+            top: 169px;
+            left: 188px;
+            width: 70px;
+            height: 51px;
+            background-color: #000;
+            border: 5px solid #000;
+            border-radius: 50% 50% 46% 54% / 35% 29% 71% 65%;
+            transform: rotate(-3deg);
+            z-index: 10;
+        }
+
+        .eye-left {
+            position: absolute;
+            top: -30px;
+            left: -77px;
+            width: 75px;
+            height: 35px;
+            border: 5px solid #000;
+            border-radius: 66% 34% 100% 0% / 100% 100% 0% 0%;
+            transform: rotate(-5deg);
+        }
+
+        .eye-left-eyelid {
+            position: absolute;
+            top: 9px;
+            left: -8px;
+            width: 73px;
+            height: 21px;
+            border: 5px solid #000;
+            border-radius: 66% 34% 100% 0% / 100% 100% 0% 0%;
+            transform: rotate(-4deg);
+        }
+
+        .eye-right {
+            position: absolute;
+            top: -30px;
+            right: -69px;
+            width: 67px;
+            height: 35px;
+            border: 5px solid #000;
+            border-radius: 36% 64% 100% 0% / 100% 100% 0% 0%;
+            transform: rotate(2deg);
+        }
+
+        .eye-right-eyelid {
+            position: absolute;
+            top: 8px;
+            left: -5px;
+            width: 65px;
+            height: 21px;
+            border: 5px solid #000;
+            border-radius: 36% 64% 100% 0% / 100% 100% 0% 0%;
+            transform: rotate(2deg);
+        }
+        .cheek-left {
+            position: absolute;
+            top: 90px;
+            left: -80px;
+            width: 155px;
+            height: 215px;
+            background-color: #f5d975;
+            border: 5px solid #000;
+            border-radius: 50%;
+            transform: rotate(-16deg);
+        }
+
+        .cheek-right {
+            position: absolute;
+            top: 90px;
+            right: -60px;
+            width: 118.5px;
+            height: 238.5px;
+            background-color: #f5d975;
+
+            border: 5px solid #000;
+            border-radius: 52% 48% 48% 52% / 47% 47% 53% 53%;
+            transform: rotate(16.8deg);
+        }
+
+        .face-bottom {
+            position: absolute;
+            top: 165px;
+            left: -5px;
+            width: 417px;
+            height: 228px;
+            background-color: #f5d975;
+            border: 5px solid #000;
+            border-radius: 53% 47% 43% 57% / 50% 32% 68% 50%;
+        }
+
+        .mouth-left {
+            position: absolute;
+            top: 20px;
+            left: 130px;
+            width: 112px;
+            height: 84px;
+            background-color: #f5d975;
+            border: 5px solid #000;
+            border-radius: 50%;
+            transform: rotate(-14deg);
+            z-index: 10;
+        }
+
+        .mouth-right {
+            position: absolute;
+            top: 15px;
+            left: 200px;
+            width: 111px;
+            height: 82px;
+            background-color: #f5d975;
+            border: 5px solid #000;
+            border-radius: 53% 47% 48% 52% / 44% 43% 57% 56%;
+            transform: rotate(27.57deg);
+            z-index: 10;
+        }
+
+        .chin-bottom {
+            position: absolute;
+            top: 90px;
+            left: 105px;
+            width: 229px;
+            height: 154px;
+            background-color: #f5d975;
+            border: 5px solid #000;
+            border-radius: 53% 47% 48% 52% / 44% 43% 57% 56%;
+            z-index: -1;
+        }
+
+        .chin-bottom-cover {
+            position: absolute;
+            top: 140px;
+            right: 95px;
+            width: 185px;
+            height: 94px;
+            background-color: #f5d975;
+            border-radius: 41% 42% 49% 48% / 50% 47% 43% 47%;
+            z-index: 0;
+        }
+
+        .mouth-top {
+            position: absolute;
+            top: -10px;
+            left: 170px;
+            width: 105px;
+            height: 94px;
+            background-color: #f5d975;
+            border: 5px solid #000;
+            border-radius: 52% 48% 46% 54% / 61% 56% 44% 39%;
+            z-index: 10;
+        }
+
+        .mouth-bottom {
+            position: absolute;
+            top: 100px;
+            left: 180px;
+            width: 95px;
+            height: 48px;
+            background-color: #f5d975;
+            border: 5px solid #000;
+            border-radius: 50%;
+        }
+
+        .mouth-cover-top {
+            position: absolute;
+            left: 170px;
+            width: 105px;
+            height: 85px;
+            background-color: #f5d975;
+            border-radius: 52% 48% 46% 54% / 61% 56% 44% 39%;
+            z-index: 10;
+        }
+
+        .cover-sq-cheek-left_1 {
+            position: absolute;
+            top: 24px;
+            left: -188px;
+            width: 150px;
+            height: 76px;
+            background-color: #f5d975;
+            border-radius: 100% 0% 100% 0% / 73% 47% 53% 27%;
+            transform: rotate(-24deg);
+        }
+
+        .cover-sq-cheek-left_2 {
+            position: absolute;
+            top: -8px;
+            left: -108px;
+            width: 150px;
+            height: 36px;
+            background-color: #f5d975;
+            border-radius: 100% 0% 100% 0% / 73% 0% 93% 27%;
+            transform: rotate(-10deg);
+        }
+
+        .cover-sq-cheek-right {
+            position: absolute;
+            top: -9px;
+            left: 54px;
+            width: 203px;
+            height: 49px;
+            background-color: #f5d975;
+            border-radius: 10% 29% 116% 0% / 0% 103% 0% 100%;
+            transform: rotate(32deg);
+        }
+
+        .cover-sq-nose {
+            position: absolute;
+            top: 18px;
+            left: 0px;
+            width: 50px;
+            height: 70px;
+            background-color: #f5d975;
+            transform: rotate(-30deg);
+        }
+
+        .mouth-cover-bottom {
+            position: absolute;
+            top: 93px;
+            left: 180px;
+            width: 95px;
+            height: 50px;
+            background-color: #f5d975;
+            border-radius: 52% 48% 46% 54% / 52% 52% 48% 48%;
+        }
+
+        .cheek-deco-left {
+            position: absolute;
+            top: 9px;
+            left: 130px;
+            width: 55px;
+            height: 30px;
+            background-color: #d8715f;
+            border-radius: 50%;
+        }
+
+        .cheek-deco-right {
+            position: absolute;
+            top: 9px;
+            right: 139px;
+            width: 57px;
+            height: 30px;
+            background-color: #d8715f;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fan"></div>
+    <div class="lierry">
+        <div class="head">
+            <div class="ear-left"></div>
+            <div class="ear-right"></div>
+            <img class="hair" src="https://images.unsplash.com/photo-1573736336393-edc3e15c8005?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="소듕한사자갈기">
+        </div>
+        <div class="face-top">
+            <div class="cheek-left"></div>
+            <div class="cheek-right"></div>
+        </div>
+        <div class="face-bottom">
+            <div class="chin-top">
+                <div class="mouth-left"></div>
+                <div class="mouth-right"></div>
+            </div>
+            <div class="chin-bottom">
+            </div>
+            <div class="chin-bottom-cover"></div>
+            <div class="mouth-top"></div>
+            <div class="mouth-bottom"></div>
+            <div class="mouth-cover-top">
+                <div class="cover-sq-cheek-left_1"></div>
+                <div class="cover-sq-cheek-left_2"></div>
+                <div class="cover-sq-cheek-right"></div>
+                <div class="cover-sq-cheek-right"></div>
+                <div class="cover-sq-nose"></div>
+            </div>
+            <div class="mouth-cover-bottom"></div>
+        </div>
+        <div class="feature">
+            <div class="eye-left">
+                <div class="eye-left-eyelid"></div>
+            </div>
+            <div class="eye-right">
+                <div class="eye-right-eyelid"></div>
+            </div>
+            <div class="cheek-deco-left"></div>
+            <div class="cheek-deco-right"></div>
+            <div class="cheek-deco-left"></div>
+            <div class="cheek-deco-right"></div>
+        </div>
+    </div>
+</body>
+
+</html>

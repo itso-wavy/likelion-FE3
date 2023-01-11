@@ -28,4 +28,3 @@ while (todo !== 'quit') {
     }
 }
 console.log('앱을 종료합니다')
-
