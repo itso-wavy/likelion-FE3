@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+
+#canvas {
+  border: 1px solid black;
+}
+
+#canvasBg {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  z-index: -1;
+}
