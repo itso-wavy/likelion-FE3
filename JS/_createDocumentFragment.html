@@ -6,14 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    #root {
+      display: flex;
+    }
+
+    article {
+      border: 3px solid lightblue;
+    }
+
+    img {
+      width: 300px;
+    }
+  </style>
 </head>
 
 <body>
-  <main></main>
+  <div id="root"></div>
 
   <script>
     const fragment = document.createDocumentFragment();
-    let $main = document.querySelector('main');
+    let $root = document.querySelector('#root');
 
     for (let i = 0; i < 10; i++) {
       const $article = document.createElement('article');
@@ -29,10 +42,9 @@
 
       fragment.appendChild($article);
     }
+    $root.appendChild(fragment.cloneNode(true));
     // 메서드를 호출한 노드를 복제해서 반환합니다.
-    $main.appendChild(fragment.cloneNode(true));
-    // frag 객체는 사용 후에도 사라지지 않습니다.
-    //frag.appendChild(document.createElement('div'));
+    // fragment 객체는 사용 후에도 사라지지 않습니다.
   </script>
 </body>
 
