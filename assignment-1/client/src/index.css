@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  p[role='heading'] {
+    @apply text-lg font-semibold mb-3 ml-3 text-primary relative;
+  }
+  p[role='heading']::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    position: absolute;
+    top: 7px;
+    left: -10px;
+    background-color: black;
+  }
+}

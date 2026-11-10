@@ -1,0 +1,36 @@
+{
+  "researchers": [
+    {
+      "id": "1",
+      "pin": "1234ASDF",
+      "organization": "서울대학교병원",
+      "password": "0000",
+      "phoneNumber": "010-0000-0000",
+      "name": "김댕댕"
+    },
+    {
+      "id": "2",
+      "pin": "5678QWER",
+      "organization": "연세대학교 세브란스병원",
+      "password": "0000",
+      "phoneNumber": "010-1111-1111",
+      "name": "이멍멍"
+    },
+    {
+      "id": "da22",
+      "name": "은혜연",
+      "phoneNumber": "01011111111",
+      "organization": "튜링바이오",
+      "password": "0000",
+      "pin": "OMYF8S2P"
+    },
+    {
+      "id": "8942",
+      "name": "ss",
+      "phoneNumber": "sss",
+      "organization": "ssss",
+      "password": "0000",
+      "pin": "RTXCVMJV"
+    }
+  ]
+}
